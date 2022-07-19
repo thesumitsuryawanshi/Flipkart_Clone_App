@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flipkartcloneapp.Adapters.*
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
+import com.smarteist.autoimageslider.SliderView
 
 class
 Home : AppCompatActivity() {
 
     lateinit var binding: ActivityHomeBinding
+    lateinit var sliderAdapter: SliderAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,10 +89,20 @@ Home : AppCompatActivity() {
     }
 
     private fun AutoImageSlider() {
-        var images = listOf(R.drawable.img1, R.drawable.img2, R.drawable.img3)
-        var adapter = ImgSliderViewPagerAdapter(images)
 
-        binding.vpViewpager.adapter = adapter
+
+        val images = listOf(R.drawable.img1, R.drawable.img2, R.drawable.img3)
+
+        sliderAdapter = SliderAdapter(images)
+        val autoimgSlider = binding.autoImgSlider
+
+        autoimgSlider.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
+        autoimgSlider.setSliderAdapter(sliderAdapter)
+        autoimgSlider.scrollTimeInSec = 3
+        autoimgSlider.isAutoCycle = true
+
+        binding.autoImgSlider.startAutoCycle()
+
     }
 
 }
