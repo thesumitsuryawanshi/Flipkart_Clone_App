@@ -20,7 +20,6 @@ Home : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getSupportActionBar()?.hide()
 
         AutoImageSlider()
         RV_Category_SetUp()
