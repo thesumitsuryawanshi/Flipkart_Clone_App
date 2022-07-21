@@ -5,11 +5,13 @@
     <item
         android:id="@+id/mi_notifications"
         android:title="Notifications"
+        android:icon="@drawable/ic_alert"
         app:showAsAction="always" />
 
 
     <item
         android:id="@+id/mi_Cart"
+        android:icon="@drawable/ic_cart"
         android:title="DarkMode"
         app:showAsAction="always" />
 

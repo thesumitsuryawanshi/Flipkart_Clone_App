@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Flipkart Clone App</string>
+    <string name="app_name">Flipkart</string>
     <string name="termsandcondition"><u>Terms and conditions</u></string>
     <string name="registerNow">Just swipe right and <u>Sign Up</u>  !</string>
     <string name="facebook_app_id">952673915667088</string>
