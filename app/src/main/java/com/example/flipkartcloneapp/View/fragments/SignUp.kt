@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.fragments
+package com.example.flipkartcloneapp.View.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.example.flipkartcloneapp.Home
+import com.example.flipkartcloneapp.View.Home
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.FragmentSignUpBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn

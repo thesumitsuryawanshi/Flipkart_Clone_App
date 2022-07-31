@@ -28,6 +28,6 @@ class rv_clothing_and_Shoes_adapter(val category: List<String>) :
     }
 
     class ViewHolder(binding: RvClothingandshoesBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvCategory
+        val name = binding.tvDiscountOnCloths
     }
 }

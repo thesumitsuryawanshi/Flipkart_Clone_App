@@ -14,7 +14,7 @@
         android:theme="@style/Theme.FlipkartCloneApp">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Home">
+        <activity android:name=".View.Home">
 
         </activity>
     </application>

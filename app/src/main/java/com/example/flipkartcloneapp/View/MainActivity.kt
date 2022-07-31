@@ -1,15 +1,15 @@
-package com.example.flipkartcloneapp
+package com.example.flipkartcloneapp.View
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flipkartcloneapp.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.databinding.ActivityMainBinding
-import com.example.flipkartcloneapp.fragments.Login
-import com.example.flipkartcloneapp.fragments.SignUp
+import com.example.flipkartcloneapp.View.fragments.Login
+import com.example.flipkartcloneapp.View.fragments.SignUp
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -31,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         CheckGoogleSignIn()
         viewPagerInit()
-
     }
 
     private fun CheckGoogleSignIn() {
@@ -74,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
         })
-
     }
 
 }

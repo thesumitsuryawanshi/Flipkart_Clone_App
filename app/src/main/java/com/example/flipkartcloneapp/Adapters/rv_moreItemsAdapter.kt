@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flipkartcloneapp.databinding.RvMoreItemsBinding
 
-class rv_moreItemsAdapter(val category: List<String>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
+class rv_moreItemsAdapter(val category: List<String>) :  RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -17,16 +15,14 @@ class rv_moreItemsAdapter(val category: List<String>) :
         return viewholder
 
     }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
     }
-
     override fun getItemCount(): Int {
         return category.size
     }
-
     class ViewHolder(binding: RvMoreItemsBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvCategory
+        val name = binding.tvWatchPrice
     }
+
 }

@@ -27,6 +27,6 @@ class rvOffersAdapter(val category: List<String>) :
     }
 
     class ViewHolder(binding: HRvOffersBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvCategory
+        val name = binding.tvOfferPrice
     }
 }

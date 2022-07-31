@@ -3,20 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/signUp">
+    app:startDestination="@id/notificationFrag">
 
     <fragment
         android:id="@+id/login"
-        android:name="com.example.flipkartcloneapp.fragments.Login"
+        android:name="com.example.flipkartcloneapp.View.fragments.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/signUp"
-        android:name="com.example.flipkartcloneapp.fragments.SignUp"
+        android:name="com.example.flipkartcloneapp.View.fragments.SignUp"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.flipkartcloneapp.View.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.example.flipkartcloneapp.View.fragments.HomeFrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/notificationFrag"
+        android:name="com.example.flipkartcloneapp.View.fragments.NotificationFrag"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification"></fragment>
 
-<action app:destination="@id/signUp"
-    android:id="@+id/GlobalActionToSignUpFrag"
-    />
+
+    <action
+        android:id="@+id/GlobalActionToSignUpFrag"
+        app:destination="@id/signUp" />
+    <action
+        android:id="@+id/GlobalActionToCartFrag"
+        app:destination="@id/cartFragment" />
+    <action
+        android:id="@+id/GlobalActionToNotificationFrag"
+        app:destination="@id/cartFragment" />
+
 </navigation>

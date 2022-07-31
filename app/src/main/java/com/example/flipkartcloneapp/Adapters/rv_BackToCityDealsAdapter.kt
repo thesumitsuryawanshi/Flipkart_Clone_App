@@ -28,6 +28,6 @@ class rv_BackToCityDealsAdapter(val category: List<String>) :
     }
 
     class ViewHolder(binding: RvBackToCityDealsBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvCategory
+        val name = binding.tvDiscount
     }
 }

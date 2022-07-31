@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    <include layout="@layout/custom_actio4n_bar"/>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".View.Home">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/autoImgSlider"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:sliderAnimationDuration="500"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="500"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="20dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="1dp"
+                app:sliderIndicatorRadius="1.3dp"
+                app:sliderIndicatorSelectedColor="@color/red"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_centerInParent="true"
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_Categories"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/autoImgSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="8"
+                tools:listitem="@layout/h_rv_categories"
+                tools:orientation="horizontal" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_Offers"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/rv_Categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="8"
+                tools:layout_editor_absoluteX="33dp"
+                tools:listitem="@layout/h_rv_offers"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/tv_backToCity"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_Offers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="BACK TO THE CITY"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_backToCity"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_backToCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="8"
+                tools:listitem="@layout/rv_back_to_city_deals"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/tv_clothingAndShoes"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_backToCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="CLOTHING AND SHOES"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_clothingAndShoes"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_clothingAndShoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="8"
+                tools:listitem="@layout/rv_back_to_city_deals"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/tv_moreItems"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_clothingAndShoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="MORE TO LOVE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_moreItems"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_moreItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="8"
+                tools:listitem="@layout/rv_more_items" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

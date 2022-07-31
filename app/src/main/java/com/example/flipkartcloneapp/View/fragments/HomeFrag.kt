@@ -1,64 +1,49 @@
-package com.example.flipkartcloneapp
+package com.example.flipkartcloneapp.View.fragments
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flipkartcloneapp.Adapters.*
-import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
+import com.example.flipkartcloneapp.R
+import com.example.flipkartcloneapp.databinding.FragmentHomeBinding
 import com.smarteist.autoimageslider.SliderView
 
+class HomeFrag : Fragment(R.layout.fragment_home) {
 
-class Home : AppCompatActivity() {
-
-    lateinit var binding: ActivityHomeBinding
+    lateinit var binding: FragmentHomeBinding
     lateinit var sliderAdapter: SliderAdapter
-    lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        supportActionBar?.hide()
-
-        setUpDrawerLayout()
         AutoImageSlider()
         RV_Category_SetUp()
         RV_Offers_SetUp()
         RV_BackToCityDealsSetUp()
         Rv_ClothingAndShoesSetUp()
         RV_MoreItemsSetUp()
+
+
+        return binding.root
     }
 
-    private fun setUpDrawerLayout() {
-
-        val actionBarDrawerToggle = ActionBarDrawerToggle(
-            this,
-            binding.mainDrawerLayout,
-            binding.topAppToolBar,
-            R.string.app_name,
-            R.string.app_name
-        )
-
-        binding.mainDrawerLayout.addDrawerListener(actionBarDrawerToggle)
-        actionBarDrawerToggle.syncState()
-    }
 
     private fun RV_MoreItemsSetUp() {
-        var name =
-            listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
+
+        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
         val adapter = rv_moreItemsAdapter(name)
         binding.rvMoreItems.adapter = adapter
 
         binding.rvMoreItems.layoutManager =
-            GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
-
+            GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
 
     }
 
@@ -69,7 +54,7 @@ class Home : AppCompatActivity() {
         binding.rvBackToCity.adapter = adapter
 
         binding.rvBackToCity.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
     }
 
@@ -80,7 +65,7 @@ class Home : AppCompatActivity() {
         binding.rvClothingAndShoes.adapter = adapter
 
         binding.rvClothingAndShoes.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
     }
 
@@ -92,7 +77,7 @@ class Home : AppCompatActivity() {
         binding.rvOffers.adapter = adapter
 
         binding.rvOffers.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
 
     }
@@ -103,7 +88,7 @@ class Home : AppCompatActivity() {
         binding.rvCategories.adapter = adapter
 
         binding.rvCategories.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
     }
 
@@ -123,18 +108,4 @@ class Home : AppCompatActivity() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.top_tool_bar, menu)
-        return true
-    }
-
 }
-
-

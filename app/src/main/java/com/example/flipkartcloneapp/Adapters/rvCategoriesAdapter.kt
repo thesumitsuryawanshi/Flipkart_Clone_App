@@ -8,7 +8,6 @@ import com.example.flipkartcloneapp.databinding.HRvCategoriesBinding
 class rvCategoriesAdapter(val category: List<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         val view = HRvCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -30,4 +29,5 @@ class rvCategoriesAdapter(val category: List<String>) :
     class ViewHolder(binding: HRvCategoriesBinding) : RecyclerView.ViewHolder(binding.root) {
         val name = binding.tvCategory
     }
+
 }

@@ -9,7 +9,6 @@ import com.example.flipkartcloneapp.databinding.RvNotificationsItemsBinding
 class rvNotificationsAdapters(val notificationsList: List<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         val view = RvNotificationsItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
