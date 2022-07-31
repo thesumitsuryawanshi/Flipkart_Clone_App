@@ -16,5 +16,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fb_favourite_btn">"Add this to my favourites "</string>
 
 </resources>
