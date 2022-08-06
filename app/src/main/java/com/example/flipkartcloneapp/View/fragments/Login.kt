@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Home
 import com.example.flipkartcloneapp.View.MainActivity
-import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.FragmentLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -48,11 +48,6 @@ class Login : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         googleAuthCheck()
-
-        binding.tvRegisterNow.setOnClickListener {
-            MainActivity().viewpager.setCurrentItem(0)
-
-        }
 
         binding.btnSignin.setOnClickListener {
             val id = binding.etGmailid.text.toString()

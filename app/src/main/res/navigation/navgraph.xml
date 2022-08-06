@@ -29,7 +29,16 @@
         android:id="@+id/notificationFrag"
         android:name="com.example.flipkartcloneapp.View.fragments.NotificationFrag"
         android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification"
+
+        />
+    <fragment
+        android:id="@+id/showProductFrag"
+        android:name="com.example.flipkartcloneapp.View.fragments.showProductFrag"
+        android:label="showProductFrag"
+        tools:layout="@layout/frag_view_product"
+
+        />
 
 
     <action
@@ -41,5 +50,6 @@
     <action
         android:id="@+id/GlobalActionToNotificationFrag"
         app:destination="@id/cartFragment" />
+
 
 </navigation>

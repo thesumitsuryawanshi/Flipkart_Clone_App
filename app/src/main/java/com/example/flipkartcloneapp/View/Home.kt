@@ -5,10 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
-import com.example.flipkartcloneapp.View.fragments.HomeFrag
 import com.google.android.material.snackbar.Snackbar
 
 class Home : AppCompatActivity() {
@@ -18,6 +17,8 @@ class Home : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -33,17 +34,20 @@ class Home : AppCompatActivity() {
             when (menuitem.itemId) {
                 R.id.mi_Cart -> {
                     // TODO: check whether this trnaaction of fragment is working or not.
-                    NavHostFragment.findNavController(HomeFrag())
-                        .navigate(R.id.GlobalActionToCartFrag)
+                    Snackbar.make(binding.root, "top tool bar item click.", Snackbar.LENGTH_LONG)
+                        .show()
                 }
                 R.id.mi_notifications -> {
                     // TODO: check whether this trnaaction of fragment is working or not.
-                    NavHostFragment.findNavController(HomeFrag())
-                        .navigate(R.id.GlobalActionToNotificationFrag)
+                    Snackbar.make(binding.root, "top tool bar item click.", Snackbar.LENGTH_LONG)
+                        .show()
                 }
                 else -> {
-                    Snackbar.make(binding.topAppToolBar, "Notifications", Snackbar.LENGTH_LONG)
-                        .show()
+                    Snackbar.make(
+                        binding.root,
+                        "top tool bar item click not working.",
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             }
             true

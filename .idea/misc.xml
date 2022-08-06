@@ -16,30 +16,37 @@
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/layout/h_rv_offers.xml" value="0.228125" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable-v24/bgroundtop.xml" value="0.1975" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable-v24/ic_baseline_person_pin_24.xml" value="0.216" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/edittextborder.xml" value="0.213" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/et_dark_border.xml" value="0.213" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic__lock.xml" value="0.2345" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_alert.xml" value="0.197" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_baseline_currency_exchange_24.xml" value="0.258" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.341" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_cart.xml" value="0.197" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_logout.xml" value="0.2325" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_menu.xml" value="0.2345" />
-        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_home.xml" value="0.4" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_main.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/custom_action_bar.xml" value="0.22395833333333334" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/frag_view_product.xml" value="0.19196940726577438" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_cart.xml" value="0.3296398891966759" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_home.xml" value="0.22239583333333332" />
-        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_login.xml" value="0.6" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_login.xml" value="0.5" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_notification.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_sign_up.xml" value="0.4" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_categories.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_offers.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/item_view_pager.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/navdrawer_header_layout.xml" value="0.41788143828960156" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/navdrawer_header_layout.xml" value="0.6" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/navdrawer_menu_items.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_back_to_city_deals.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_clothingandshoes.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_more_items.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_mycart_items.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_notifications_items.xml" value="0.33" />
-        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/view_product_frag.xml" value="0.22" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/view_product_frag.xml" value="0.5" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/menu/btm_navbar_menu.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/menu/navdrawer_menu_item.xml" value="0.6" />
         <entry key="..\:/Users/sumitsur/StudioProjects/Flipkart_Clone_App/app/src/main/res/menu/top_tool_bar.xml" value="0.22395833333333334" />
       </map>
     </option>

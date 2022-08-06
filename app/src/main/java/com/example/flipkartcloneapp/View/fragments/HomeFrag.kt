@@ -24,6 +24,8 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
+        checkGooglelogin()
         AutoImageSlider()
         RV_Category_SetUp()
         RV_Offers_SetUp()
@@ -33,6 +35,10 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
 
         return binding.root
+    }
+
+    private fun checkGooglelogin() {
+
     }
 
 

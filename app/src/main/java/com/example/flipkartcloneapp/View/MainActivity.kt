@@ -1,15 +1,19 @@
 package com.example.flipkartcloneapp.View
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flipkartcloneapp.Adapters.ViewPagerAdapter
-import com.example.flipkartcloneapp.databinding.ActivityMainBinding
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
+import com.example.flipkartcloneapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -31,8 +35,41 @@ class MainActivity : AppCompatActivity() {
 
         getSupportActionBar()?.hide()
 
+        if (!checkInternetConnection(this)) {
+            Toast.makeText(this, "Need Internet connection", Toast.LENGTH_SHORT).show()
+        }
+
         CheckGoogleSignIn()
         viewPagerInit()
+    }
+
+    private fun checkInternetConnection(context: Context): Boolean {
+
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (connectivityManager != null) {
+            val capabilities =
+                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            if (capabilities != null) {
+
+                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+                    return true
+
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+                    return true
+
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+                    return true
+
+                }
+            }
+        }
+        return false
     }
 
     private fun CheckGoogleSignIn() {

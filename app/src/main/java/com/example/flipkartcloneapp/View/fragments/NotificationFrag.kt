@@ -48,5 +48,4 @@ class NotificationFrag : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 
-
 }
