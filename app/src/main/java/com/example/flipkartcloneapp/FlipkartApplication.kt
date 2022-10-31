@@ -1,8 +1,8 @@
 package com.example.flipkartcloneapp
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
 
-class FlipkartApplication : Application() {
-
-}
+@HiltAndroidApp
+class FlipkartApplication : Application()

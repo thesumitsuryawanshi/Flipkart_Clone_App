@@ -16,7 +16,7 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
-        android:id="@+id/cartFragment"
+        android:id="@+id/cartFrag"
         android:name="com.example.flipkartcloneapp.View.fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
@@ -43,13 +43,32 @@
 
     <action
         android:id="@+id/GlobalActionToSignUpFrag"
-        app:destination="@id/signUp" />
-    <action
-        android:id="@+id/GlobalActionToCartFrag"
-        app:destination="@id/cartFragment" />
+        app:destination="@id/signUp"
+
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+
+        />
+
     <action
         android:id="@+id/GlobalActionToNotificationFrag"
-        app:destination="@id/cartFragment" />
+        app:destination="@id/notificationFrag"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
 
+        />
+    <action
+        android:id="@+id/action_global_cartFrag"
+        app:destination="@id/cartFrag"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+
+        />
 
 </navigation>

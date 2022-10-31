@@ -7,14 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Home
-import com.example.flipkartcloneapp.View.MainActivity
 import com.example.flipkartcloneapp.databinding.FragmentLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.CoroutineScope
@@ -54,6 +55,16 @@ class Login : Fragment() {
             val password = binding.etPassword.text.toString()
 
             SignInWithIdPass(id, password)
+        }
+
+        binding.tvSwipeRightToSignUp.setOnClickListener {
+            Snackbar.make(
+                binding.root,
+                "CHecking the swipe right to sign up action",
+                Snackbar.LENGTH_SHORT
+            ).show()
+
+            Navigation.findNavController(binding.root).navigate(R.id.GlobalActionToSignUpFrag)
         }
     }
 

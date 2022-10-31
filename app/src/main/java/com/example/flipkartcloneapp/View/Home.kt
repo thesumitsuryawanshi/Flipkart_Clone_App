@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
 import com.google.android.material.snackbar.Snackbar
@@ -13,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 class Home : AppCompatActivity() {
 
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+
     lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,16 +34,21 @@ class Home : AppCompatActivity() {
     private fun ToptoolbarItemCLicks() {
         binding.topAppToolBar.setOnMenuItemClickListener { menuitem ->
             when (menuitem.itemId) {
+
                 R.id.mi_Cart -> {
-                    // TODO: check whether this trnaaction of fragment is working or not.
-                    Snackbar.make(binding.root, "top tool bar item click.", Snackbar.LENGTH_LONG)
+            // TODO:  Need to implement :  after clicking this toptoolbar cart icon CartFrag should show up.
+                    Navigation.findNavController(binding.navHostFragment)
+                        .navigate(R.id.action_global_cartFrag)
+                    Snackbar.make(binding.root, " Cart frag  ", Snackbar.LENGTH_LONG)
                         .show()
                 }
                 R.id.mi_notifications -> {
-                    // TODO: check whether this trnaaction of fragment is working or not.
-                    Snackbar.make(binding.root, "top tool bar item click.", Snackbar.LENGTH_LONG)
+                    Navigation.findNavController(binding.navHostFragment)
+                        .navigate(R.id.GlobalActionToNotificationFrag)
+                    Snackbar.make(binding.root, "notifications frag", Snackbar.LENGTH_LONG)
                         .show()
                 }
+
                 else -> {
                     Snackbar.make(
                         binding.root,

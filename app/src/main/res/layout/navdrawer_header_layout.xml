@@ -16,7 +16,6 @@
         android:src="@drawable/ic_baseline_person_pin_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_NavDrawerUserName"
         android:layout_width="wrap_content"
@@ -40,8 +39,6 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_NavDrawerUserPic"
         app:layout_constraintVertical_bias="0.035"
         tools:layout_editor_absoluteX="0dp" />
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +52,6 @@
 
         <TextView
             android:id="@+id/tv_MySuperCoins"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-smallcaps"
@@ -81,4 +77,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

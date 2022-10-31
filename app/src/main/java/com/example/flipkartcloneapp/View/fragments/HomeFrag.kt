@@ -24,7 +24,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
         checkGooglelogin()
         AutoImageSlider()
         RV_Category_SetUp()
@@ -32,7 +31,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         RV_BackToCityDealsSetUp()
         Rv_ClothingAndShoesSetUp()
         RV_MoreItemsSetUp()
-
 
         return binding.root
     }
@@ -89,18 +87,26 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     }
 
     private fun RV_Category_SetUp() {
-        var name = listOf("temp", "temp", "temp", "temp", "temp", "temp", "temp", "temp")
-        val adapter = rvCategoriesAdapter(name)
+        val name =listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")
+        val imgList =listOf(R.drawable.c_electronics,R.drawable.c_fasion , R.drawable.c_furniture
+            ,R.drawable.c_gifts,
+            R.drawable.c_grosery , R.drawable.c_mobiles, R.drawable.c_toys)
+
+
+        val adapter = rvCategoriesAdapter(name,imgList, requireContext() )
         binding.rvCategories.adapter = adapter
 
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
     private fun AutoImageSlider() {
 
-        val images = listOf(R.drawable.img1, R.drawable.img2, R.drawable.img3)
+        val images = listOf(
+            R.drawable.alia_bhat_banner,
+            R.drawable.indian_people_banner,
+            R.drawable.kohli_banner
+        )
 
         sliderAdapter = SliderAdapter(images)
         val autoimgSlider = binding.autoImgSlider

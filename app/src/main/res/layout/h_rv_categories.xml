@@ -19,10 +19,10 @@
 
 
         <ImageView
-            android:id="@+id/iv_watch_section"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:padding="10dp"
+            android:id="@+id/iv_categories"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="5dp"
             android:src="@drawable/ic_baseline_category_24" />
     </androidx.cardview.widget.CardView>
 

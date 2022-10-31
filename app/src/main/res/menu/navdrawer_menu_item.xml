@@ -19,8 +19,8 @@
         android:title="About Developer"
         app:showAsAction="always" />
     <item
-        android:id="@+id/mi_logout"
         android:icon="@drawable/ic_logout"
+        android:id="@+id/mi_logout"
         android:title="Logout"
         app:showAsAction="always" />
 

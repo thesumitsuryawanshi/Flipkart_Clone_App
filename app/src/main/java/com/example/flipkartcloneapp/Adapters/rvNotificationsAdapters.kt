@@ -29,7 +29,6 @@ class rvNotificationsAdapters(val notificationsList: List<String>) :
 
     class ViewHolder(binding: RvNotificationsItemsBinding) : RecyclerView.ViewHolder(binding.root) {
         val tvTiming = binding.tvTiming
-        val ivNotifications = binding.ivSmNotificationsIcons
          val name = binding.tvNotificationText
     }
 
