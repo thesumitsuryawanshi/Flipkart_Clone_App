@@ -29,7 +29,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         RV_Category_SetUp()
         RV_Offers_SetUp()
         RV_BackToCityDealsSetUp()
-        Rv_ClothingAndShoesSetUp()
+        Rv_BrandDeals()
         RV_MoreItemsSetUp()
 
         return binding.root
@@ -39,7 +39,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
     }
 
-
     private fun RV_MoreItemsSetUp() {
 
         var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
@@ -48,23 +47,21 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         binding.rvMoreItems.layoutManager =
             GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
-
     }
 
     private fun RV_BackToCityDealsSetUp() {
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
+        var name = listOf("offer", "offer", "offer", "offer", "offer","offer")
         val adapter = rv_BackToCityDealsAdapter(name)
         binding.rvBackToCity.adapter = adapter
 
         binding.rvBackToCity.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
-    private fun Rv_ClothingAndShoesSetUp() {
+    private fun Rv_BrandDeals() {
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
+        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer" )
         val adapter = rv_clothing_and_Shoes_adapter(name)
         binding.rvClothingAndShoes.adapter = adapter
 
@@ -75,14 +72,11 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
     private fun RV_Offers_SetUp() {
 
-
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
+        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
         val adapter = rvOffersAdapter(name)
         binding.rvOffers.adapter = adapter
-
         binding.rvOffers.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
 
     }
 

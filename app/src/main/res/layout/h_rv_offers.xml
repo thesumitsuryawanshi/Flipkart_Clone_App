@@ -26,7 +26,7 @@
             android:layout_height="90dp"
             android:padding="10dp"
             android:scaleType="fitEnd"
-            android:src="@drawable/ic_baseline_local_offer_24" />
+            android:src="@drawable/ic_offer" />
 
         <TextView
             android:id="@+id/tv_Offer_price"

@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Please Sign in first.", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     fun viewPagerInit() {
@@ -103,7 +102,6 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {

@@ -33,5 +33,4 @@ lateinit var binding:FragViewProductBinding
             binding.fbFavouriteBtn.setBackgroundResource(R.color.red)
         }
     }
-
 }

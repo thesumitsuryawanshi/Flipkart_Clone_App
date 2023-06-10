@@ -24,5 +24,4 @@ class rv_moreItemsAdapter(val category: List<String>) :  RecyclerView.Adapter<Re
     class ViewHolder(binding: RvMoreItemsBinding) : RecyclerView.ViewHolder(binding.root) {
         val name = binding.tvWatchPrice
     }
-
 }

@@ -88,13 +88,13 @@
                 tools:orientation="horizontal" />
 
             <TextView
-                android:id="@+id/tv_clothingAndShoes"
+                android:id="@+id/tv_BrandDeals"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rv_backToCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="CLOTHING AND SHOES"
+                android:text="BRAND Deals "
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_clothingAndShoes"
+                app:layout_constraintTop_toBottomOf="@+id/tv_BrandDeals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:itemCount="8"
