@@ -89,7 +89,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         val adapter = rvCategoriesAdapter(name,imgList, requireContext() )
         binding.rvCategories.adapter = adapter
-
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
     }
@@ -113,5 +112,4 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         binding.autoImgSlider.startAutoCycle()
 
     }
-
 }
