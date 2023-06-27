@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.Adapters
+package com.example.flipkartcloneapp.View.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater

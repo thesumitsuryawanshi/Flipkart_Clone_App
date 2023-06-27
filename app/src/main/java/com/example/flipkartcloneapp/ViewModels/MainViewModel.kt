@@ -1,28 +1,28 @@
 package com.example.flipkartcloneapp.ViewModels
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.flipkartcloneapp.Model.productsDatabase
-import kotlinx.coroutines.Dispatchers
+import com.example.flipkartcloneapp.Model.entities.ProductList
+import com.example.flipkartcloneapp.Model.repository
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class MainViewModel
 @Inject
 constructor(
-    private val productsDatabase: productsDatabase
+    private val repository: repository
 ) : ViewModel() {
 
 
+    val pList: LiveData<List<ProductList>>
+        get() = repository.ProductListData
 
-
-    suspend fun fetchingFlipkarrtProductData() {
-
+    init {
         viewModelScope.launch {
-            Log.d("mytag","VM method launched.")
-            productsDatabase.getProductsData()
+            Log.d("mytag", "VM launched.")
+            repository.getProductListData()
         }
 
     }

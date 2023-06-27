@@ -1,20 +1,17 @@
 package com.example.flipkartcloneapp.View
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.launch
 
 class Home : AppCompatActivity() {
 
@@ -34,14 +31,6 @@ class Home : AppCompatActivity() {
 
         setUpDrawerLayout()
         ToptoolbarItemCLicks()
-        fetchingFlipkarrtProductData()
-    }
-
-    private fun fetchingFlipkarrtProductData() {
-        lifecycleScope.launch {
-            Log.d("mytag"," V method launched.")
-            viewModel.fetchingFlipkarrtProductData()
-        }
     }
 
     private fun ToptoolbarItemCLicks() {

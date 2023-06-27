@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.Adapters
+package com.example.flipkartcloneapp.View.Adapters
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

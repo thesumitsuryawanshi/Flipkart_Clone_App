@@ -1,25 +1,24 @@
-package com.example.flipkartcloneapp.Adapters
+package com.example.flipkartcloneapp.View.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flipkartcloneapp.databinding.RvClothingandshoesBinding
+import com.example.flipkartcloneapp.databinding.HRvOffersBinding
 
-class rv_clothing_and_Shoes_adapter(val category: List<String>) :
+class rvOffersAdapter(val category: List<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        val view =
-            RvClothingandshoesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = HRvOffersBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = ViewHolder(view)
 
         return viewholder
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val Cname = category[position]
 
     }
 
@@ -27,7 +26,7 @@ class rv_clothing_and_Shoes_adapter(val category: List<String>) :
         return category.size
     }
 
-    class ViewHolder(binding: RvClothingandshoesBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvDiscountOnCloths
+    class ViewHolder(binding: HRvOffersBinding) : RecyclerView.ViewHolder(binding.root) {
+        val name = binding.tvOfferPrice
     }
 }

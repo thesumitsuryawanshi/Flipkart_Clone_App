@@ -1,14 +1,16 @@
 package com.example.flipkartcloneapp.Model.entities
 
 data class ProductList (
-    private val pNo: String = " ",
-    private val pName: String = "",
+    val pNo: String = " ",
 
-    private val pImgUrl: String = "",
-    private val pPrice: String = "",
+    val pName: String = "",
+    val pTitle: String = "",
 
-    private val pActualPrice: String = "",
-    private val pBankDiscount : String = "",
+    val pImgUrl: String = "",
+    val pPrice: String = "",
 
-    private val pRatings : String = ""
+    val pActualPrice: String = "",
+    val pBankDiscount: String = "",
+
+    val pRatings: String = ""
 )

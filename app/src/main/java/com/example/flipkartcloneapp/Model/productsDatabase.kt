@@ -1,28 +1,29 @@
-package com.example.flipkartcloneapp.Model
-
-import android.util.Log
-import  com.example.flipkartcloneapp.Model.entities.ProductList
-import com.example.flipkartcloneapp.util.Constants
+import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
-
 class productsDatabase {
-
     private val firestore = FirebaseFirestore.getInstance()
-    private val ProductList_Collection = firestore.collection(Constants.Product_Collection)
+    private val db = Firebase.firestore
 
     suspend fun getProductsData(): List<ProductList> {
+        val productList = mutableListOf<ProductList>()
 
-            return try {
-                Log.d(
-                    " mytagforDataChecking ",
-                    "Here is the Data is coming ProductList data : " + ProductList_Collection.get()
-                        .await().toObjects(ProductList::class.java)
-                )
-                ProductList_Collection.get().await().toObjects(ProductList::class.java)
-            } catch (e: Exception) {
-                emptyList()
+        try {
+            val snapshot = db.collection("ProductList").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(ProductList::class.java)
+                product?.let {
+                    productList.add(product)
+                }
             }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
         }
+
+        return productList
     }
+}

@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.util;
+package com.example.flipkartcloneapp.Model.util;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

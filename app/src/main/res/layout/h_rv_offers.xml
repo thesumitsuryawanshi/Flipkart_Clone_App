@@ -21,7 +21,7 @@
 
 
         <ImageView
-            android:id="@+id/iv_watch_section"
+            android:id="@+id/watchImg"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:padding="10dp"
