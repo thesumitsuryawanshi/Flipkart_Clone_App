@@ -33,7 +33,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         RV_Category_SetUp()
         RV_Offers_SetUp()
         RV_BackToCityDealsSetUp()
-        Rv_BrandDeals()
 
         return binding.root
     }
@@ -43,9 +42,8 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-
         RV_MoreItemsSetUp()
-
+        Rv_BrandDeals()
     }
 
     private fun checkGooglelogin() {
@@ -63,6 +61,27 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         }
     }
 
+    private fun Rv_BrandDeals() {
+
+        mainViewModel.BDList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rv_brandDeals(newData)
+            binding.rvBrandDeals.adapter = adapter
+
+            binding.rvBrandDeals.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+
+//        var name = listOf("offer", "offer")
+//        val adapter = rv_brandDeals(name)
+//        binding.rvBrandDeals.adapter = adapter
+//
+//        binding.rvBrandDeals.layoutManager =
+//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+    }
+
     private fun RV_BackToCityDealsSetUp() {
 
         var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
@@ -71,17 +90,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         binding.rvBackToCity.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-    }
-
-    private fun Rv_BrandDeals() {
-
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
-        val adapter = rv_clothing_and_Shoes_adapter(name)
-        binding.rvClothingAndShoes.adapter = adapter
-
-        binding.rvClothingAndShoes.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
     private fun RV_Offers_SetUp() {
