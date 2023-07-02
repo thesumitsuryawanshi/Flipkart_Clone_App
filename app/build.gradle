@@ -4,6 +4,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -82,11 +83,6 @@ dependencies {
     implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0'
     implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0'
 
-    //Dagger - Hilt/
-    implementation "com.google.dagger:hilt-android:2.37"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-    kapt "com.google.dagger:hilt-android-compiler:2.37"
-
     //multidex
     implementation "androidx.multidex:multidex:2.0.1"
 
@@ -106,7 +102,6 @@ dependencies {
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
-
 
     // Firebase Firestore
     implementation 'com.google.firebase:firebase-firestore:21.6.0'
@@ -128,8 +123,18 @@ dependencies {
     //firestore
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.1'
 
-//    dagger hilt
-    implementation 'com.google.dagger:hilt-android:2.37'
-    kapt 'com.google.dagger:hilt-android-compiler:2.37'
+    //dagger
+    // Dagger Core
+    implementation "com.google.dagger:dagger:2.44"
+    kapt "com.google.dagger:dagger-compiler:2.44"
+
+// Dagger Android
+    api 'com.google.dagger:dagger-android:2.37'
+    api 'com.google.dagger:dagger-android-support:2.37'
+    kapt 'com.google.dagger:dagger-android-processor:2.37'
+
+// Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-android-compiler:2.42"
 
 }

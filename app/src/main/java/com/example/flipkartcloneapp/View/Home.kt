@@ -3,21 +3,23 @@ package com.example.flipkartcloneapp.View
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
-import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
+//@HiltAndroidApp
 class Home : AppCompatActivity() {
 
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var binding: ActivityHomeBinding
-    private val viewModel: MainViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

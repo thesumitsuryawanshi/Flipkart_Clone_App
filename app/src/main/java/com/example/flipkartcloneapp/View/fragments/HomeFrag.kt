@@ -53,8 +53,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     }
 
     private fun RV_MoreItemsSetUp() {
-
-
         mainViewModel.pList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
             val adapter = rv_moreItemsAdapter(newData)
@@ -63,8 +61,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
             binding.rvMoreItems.layoutManager =
                 GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         }
-
-
     }
 
     private fun RV_BackToCityDealsSetUp() {

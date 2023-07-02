@@ -1,10 +1,14 @@
+package com.example.flipkartcloneapp.Model.dataSource
+
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
-class productsDatabase {
+
+public class productDatabase {
+
     private val firestore = FirebaseFirestore.getInstance()
     private val db = Firebase.firestore
 
@@ -17,13 +21,13 @@ class productsDatabase {
                 val product = document.toObject(ProductList::class.java)
                 product?.let {
                     productList.add(product)
+
                 }
             }
         } catch (e: Exception) {
             // Handle any exceptions here
             e.printStackTrace()
         }
-
         return productList
     }
 }

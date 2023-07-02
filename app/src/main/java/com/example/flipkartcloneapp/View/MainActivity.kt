@@ -17,7 +17,10 @@ import com.example.flipkartcloneapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -111,5 +114,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
 }
