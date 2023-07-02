@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="180dp"
-    android:layout_height="250dp"
-    android:layout_margin="5dp"
-    android:background="#4DB3B0B0">
-
+    android:layout_width="160dp"
+    android:layout_height="230dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/roundborders">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
@@ -14,6 +13,7 @@
         android:layout_margin="10dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="20dp"
+        android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/watchImg"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="155dp"
             android:scaleType="centerInside"
             android:src="@drawable/watch" />
 
@@ -37,7 +37,7 @@
         android:text="Audemars Piguet \n dial Men Watch"
         android:fontFamily="serif"
         android:lines="2"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -47,11 +47,10 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="US $4.2"
         android:fontFamily="serif"
         android:textAlignment="center"
-        android:textSize="17sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
