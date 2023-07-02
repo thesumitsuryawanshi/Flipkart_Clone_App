@@ -25,7 +25,6 @@ class rv_moreItemsAdapter(val pList: List<ProductList>) :
         holder.bindImage(product.pImgUrl)
     }
 
-
     override fun getItemCount(): Int {
         return pList.size
     }

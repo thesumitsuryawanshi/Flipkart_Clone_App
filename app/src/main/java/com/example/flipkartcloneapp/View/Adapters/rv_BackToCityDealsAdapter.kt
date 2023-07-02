@@ -3,13 +3,15 @@ package com.example.flipkartcloneapp.View.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.flipkartcloneapp.Model.entities.backToCityDeals
 import com.example.flipkartcloneapp.databinding.RvBackToCityDealsBinding
 
-class rv_BackToCityDealsAdapter(val category: List<String>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>) :
+    RecyclerView.Adapter<rv_BackToCityDealsAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view =
             RvBackToCityDealsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,15 +21,29 @@ class rv_BackToCityDealsAdapter(val category: List<String>) :
 
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
+        val _data = btcData[position]
+
+        holder.tvDiscount.text = _data.percentage
+        holder.bindImage(_data.imgUrl)
     }
 
     override fun getItemCount(): Int {
-        return category.size
+        return btcData.size
     }
 
     class ViewHolder(binding: RvBackToCityDealsBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name = binding.tvDiscount
+
+        val tvDiscount = binding.tvDiscount
+        val tvImg = binding.watchImg
+
+        fun bindImage(imageUrl: String) {
+            Glide.with(itemView)
+                .load(imageUrl)
+                .into(tvImg)
+        }
+
+
     }
 }

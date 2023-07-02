@@ -14,6 +14,7 @@ import com.example.flipkartcloneapp.View.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
 import com.example.flipkartcloneapp.databinding.ActivityMainBinding
+
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -23,10 +24,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private lateinit var mAuth: FirebaseAuth
     lateinit var tabLayout: TabLayout
     lateinit var viewpager: ViewPager2
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         getSupportActionBar()?.hide()
+        setContentView(binding.root)
 
         if (!checkInternetConnection(this)) {
             Toast.makeText(this, "Need Internet connection", Toast.LENGTH_SHORT).show()
@@ -114,4 +116,5 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 }

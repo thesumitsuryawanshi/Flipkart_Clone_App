@@ -30,9 +30,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         checkGooglelogin()
         AutoImageSlider()
-        RV_Category_SetUp()
-        RV_Offers_SetUp()
-        RV_BackToCityDealsSetUp()
+
 
         return binding.root
     }
@@ -42,8 +40,12 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
+        RV_Category_SetUp()
         RV_MoreItemsSetUp()
         Rv_BrandDeals()
+        RV_BackToCityDealsSetUp()
+        RV_Offers_SetUp()
+
     }
 
     private fun checkGooglelogin() {
@@ -71,37 +73,35 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
             binding.rvBrandDeals.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
-
-
-//        var name = listOf("offer", "offer")
-//        val adapter = rv_brandDeals(name)
-//        binding.rvBrandDeals.adapter = adapter
-//
-//        binding.rvBrandDeals.layoutManager =
-//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
     private fun RV_BackToCityDealsSetUp() {
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
-        val adapter = rv_BackToCityDealsAdapter(name)
-        binding.rvBackToCity.adapter = adapter
+        mainViewModel.btcList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rv_BackToCityDealsAdapter(newData)
+            binding.rvBackToCity.adapter = adapter
 
-        binding.rvBackToCity.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.rvBackToCity.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+
+        }
     }
 
     private fun RV_Offers_SetUp() {
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
-        val adapter = rvOffersAdapter(name)
-        binding.rvOffers.adapter = adapter
-        binding.rvOffers.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        mainViewModel.offerList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rvOffersAdapter(newData)
+            binding.rvOffers.adapter = adapter
+
+            binding.rvOffers.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        }
     }
-
     private fun RV_Category_SetUp() {
         val name =
             listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")

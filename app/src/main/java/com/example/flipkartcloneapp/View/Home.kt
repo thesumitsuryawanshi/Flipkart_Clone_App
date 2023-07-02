@@ -14,7 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-//@HiltAndroidApp
 class Home : AppCompatActivity() {
 
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
