@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavHostController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flipkartcloneapp.Model.entities.ProductList
@@ -16,7 +14,9 @@ import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.*
 import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.FragmentHomeBinding
+import com.google.gson.Gson
 import com.smarteist.autoimageslider.SliderView
+
 
 class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLicked {
 
@@ -34,8 +34,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
 
         checkGooglelogin()
         AutoImageSlider()
-
-
         return binding.root
     }
 
@@ -43,6 +41,9 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         super.onViewCreated(view, savedInstanceState)
 
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+
+
 
         RV_Category_SetUp()
         RV_MoreItemsSetUp()
@@ -146,7 +147,9 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
     }
 
     override fun ClickedItem(item: ProductList) {
-        Toast.makeText(requireContext(), "Home Frag + more items ", LENGTH_SHORT).show()
-        NavHostController(requireContext()).navigate(R.id.action_homeFrag_to_showProductFrag)
+        val bundle = Bundle()
+        bundle.putString("note", Gson().toJson(item))
+        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
+
     }
 }

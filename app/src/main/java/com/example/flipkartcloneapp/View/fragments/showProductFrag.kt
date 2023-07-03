@@ -1,7 +1,6 @@
 package com.example.flipkartcloneapp.View.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +9,14 @@ import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.FragViewProductBinding
+import com.google.gson.Gson
 
-class showProductFrag(private var Productdetails: ProductList) :
+class showProductFrag() :
     Fragment(R.layout.frag_view_product) {
 
     lateinit var binding: FragViewProductBinding
+    private var ProductData: ProductList? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,18 +25,32 @@ class showProductFrag(private var Productdetails: ProductList) :
 
         binding = FragViewProductBinding.inflate(inflater, container, false)
 
-        assignDataToUI(Productdetails)
+
         return binding.root
     }
 
-    private fun assignDataToUI(Productdetails: ProductList) {
-
-        Log.d("mytag", "data in showProductFrag")
-        Glide.with(this)
-            .load(Productdetails)
-            .into(binding.ivProductImage)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        assignDataToUI()
     }
 
-
+    private fun assignDataToUI() {
+        /// TODO: need to uadte the values in firebase firestiore database with emoji's
+        /// TODO: need aesthetical touch on the showProductFragment
+        val _data = arguments?.getString("note")
+        if (_data != null) {
+            ProductData = Gson().fromJson(_data, ProductList::class.java)
+            ProductData.let {
+                binding.tvActualPrice.text = it?.pActualPrice
+                binding.tvProductName.text = it?.pName
+                binding.tvCustomerRatingsCount.text = it?.pBankDiscount
+                binding.tvRatingsOnProduct.text = it?.pRatings
+                binding.tvPrice.text = it?.pPrice
+                Glide.with(this)
+                    .load(it?.pImgUrl)
+                    .into(binding.ivProductImage)
+            }
+        } else {
+        }
+    }
 }
