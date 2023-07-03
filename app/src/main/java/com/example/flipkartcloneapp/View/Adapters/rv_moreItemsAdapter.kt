@@ -7,13 +7,14 @@ import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.databinding.RvMoreItemsBinding
 
-class rv_moreItemsAdapter(val pList: List<ProductList>) :
+class rv_moreItemsAdapter(val pList: List<ProductList>, private val listener: ItemsCLicked?) :
     RecyclerView.Adapter<rv_moreItemsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = RvMoreItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = ViewHolder(view)
+
 
         return viewholder
     }
@@ -23,6 +24,13 @@ class rv_moreItemsAdapter(val pList: List<ProductList>) :
         holder.tvTitle.text = product.pTitle
         holder.tvPrice.text = product.pActualPrice
         holder.bindImage(product.pImgUrl)
+
+
+        holder.itemView.rootView.setOnClickListener {
+            listener?.ClickedItem(product)
+        }
+
+
     }
 
     override fun getItemCount(): Int {
@@ -42,4 +50,12 @@ class rv_moreItemsAdapter(val pList: List<ProductList>) :
                 .into(tvImg)
         }
     }
+
+    interface ItemsCLicked {
+        fun ClickedItem(item: ProductList) {
+        }
+
+    }
+
 }
+

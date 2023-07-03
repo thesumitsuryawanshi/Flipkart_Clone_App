@@ -4,17 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavHostController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.*
 import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.FragmentHomeBinding
 import com.smarteist.autoimageslider.SliderView
 
-class HomeFrag : Fragment(R.layout.fragment_home) {
+class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLicked {
 
     lateinit var binding: FragmentHomeBinding
     lateinit var sliderAdapter: SliderAdapter
@@ -55,7 +59,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     private fun RV_MoreItemsSetUp() {
         mainViewModel.pList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
-            val adapter = rv_moreItemsAdapter(newData)
+            val adapter = rv_moreItemsAdapter(newData, this)
             binding.rvMoreItems.adapter = adapter
 
             binding.rvMoreItems.layoutManager =
@@ -67,7 +71,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         mainViewModel.BDList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
-            val adapter = rv_brandDeals(newData)
+            val adapter = rv_brandDeals(newData, requireContext())
             binding.rvBrandDeals.adapter = adapter
 
             binding.rvBrandDeals.layoutManager =
@@ -79,7 +83,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         mainViewModel.btcList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
-            val adapter = rv_BackToCityDealsAdapter(newData)
+            val adapter = rv_BackToCityDealsAdapter(newData, requireContext())
             binding.rvBackToCity.adapter = adapter
 
             binding.rvBackToCity.layoutManager =
@@ -92,7 +96,7 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     private fun RV_Offers_SetUp() {
         mainViewModel.offerList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
-            val adapter = rvOffersAdapter(newData)
+            val adapter = rvOffersAdapter(newData, requireContext())
             binding.rvOffers.adapter = adapter
 
             binding.rvOffers.layoutManager =
@@ -100,7 +104,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         }
     }
-
 
     private fun RV_Category_SetUp() {
         val name =
@@ -142,4 +145,8 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
     }
 
+    override fun ClickedItem(item: ProductList) {
+        Toast.makeText(requireContext(), "Home Frag + more items ", LENGTH_SHORT).show()
+        NavHostController(requireContext()).navigate(R.id.action_homeFrag_to_showProductFrag)
+    }
 }

@@ -1,13 +1,15 @@
 package com.example.flipkartcloneapp.View.Adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.backToCityDeals
 import com.example.flipkartcloneapp.databinding.RvBackToCityDealsBinding
 
-class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>) :
+class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>, val context: Context) :
     RecyclerView.Adapter<rv_BackToCityDealsAdapter.ViewHolder>() {
 
 
@@ -27,6 +29,10 @@ class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>) :
 
         holder.tvDiscount.text = _data.percentage
         holder.bindImage(_data.imgUrl)
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(context, "App working", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -43,7 +49,5 @@ class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>) :
                 .load(imageUrl)
                 .into(tvImg)
         }
-
-
     }
 }
