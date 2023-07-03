@@ -10,7 +10,6 @@ import com.example.flipkartcloneapp.databinding.HRvOffersBinding
 class rvOffersAdapter(val offerList: List<Offers>) :
     RecyclerView.Adapter<rvOffersAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = HRvOffersBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,7 +21,7 @@ class rvOffersAdapter(val offerList: List<Offers>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val product = offerList[position]
-        holder.tvOffer.text = product.Discount
+        holder.tvOffer.text = product.percentage
         holder.bindImage(product.imgUrl)
 
     }
@@ -33,7 +32,7 @@ class rvOffersAdapter(val offerList: List<Offers>) :
 
     class ViewHolder(binding: HRvOffersBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val tvOffer = binding.tvOfferPrice
+        val tvOffer = binding.tvDiscount
         val tvImg = binding.watchImg
 
         fun bindImage(imageUrl: String) {

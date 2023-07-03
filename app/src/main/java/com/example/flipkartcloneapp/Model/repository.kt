@@ -45,8 +45,8 @@ class repository
     }
 
     suspend fun getOfferListData() {
-        val _offerdata = dataSource.getBackToCityList()
-        _bTCmutableLivedata.postValue(_offerdata)
+        val _offerdata = dataSource.getOffersList()
+        _offermutableLivedata.postValue(_offerdata)
     }
 
 

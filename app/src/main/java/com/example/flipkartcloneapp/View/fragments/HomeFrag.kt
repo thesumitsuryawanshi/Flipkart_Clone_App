@@ -90,8 +90,6 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     }
 
     private fun RV_Offers_SetUp() {
-
-
         mainViewModel.offerList.observe(viewLifecycleOwner) { newData ->
             // Handle the updated data here
             val adapter = rvOffersAdapter(newData)
@@ -102,6 +100,8 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         }
     }
+
+
     private fun RV_Category_SetUp() {
         val name =
             listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")

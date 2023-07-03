@@ -6,7 +6,6 @@
     android:layout_margin="5dp"
     >
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
@@ -21,21 +20,35 @@
 
         <ImageView
             android:id="@+id/watchImg"
-            android:layout_width="198dp"
-            android:layout_height="102dp"
+            android:layout_width="190dp"
+            android:layout_height="95dp"
             android:scaleType="fitEnd"
             android:src="@drawable/ic_baseline_watch_24" />
 
 
-        <TextView
-            android:id="@+id/tv_discount"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="serif"
-            android:text=" \n Up To \n 50% \n OFF"
-            android:textSize="13sp"
-            android:textStyle="bold" />
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tv_discount"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:fontFamily="serif"
+                android:text="  UpTo \n  50% \n  OFF \n"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.cardview.widget.CardView>
 

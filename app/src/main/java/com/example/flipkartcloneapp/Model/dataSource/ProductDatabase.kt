@@ -1,6 +1,7 @@
 package com.example.flipkartcloneapp.Model.dataSource
 
 import com.example.flipkartcloneapp.Model.entities.BrandDealsList
+import com.example.flipkartcloneapp.Model.entities.Offers
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.Model.entities.backToCityDeals
 import com.google.firebase.firestore.FirebaseFirestore
@@ -52,7 +53,6 @@ public class productDatabase {
         return DealsList
     }
 
-
     suspend fun getBackToCityList(): List<backToCityDeals> {
         val DealsList = mutableListOf<backToCityDeals>()
 
@@ -71,7 +71,23 @@ public class productDatabase {
         return DealsList
     }
 
+    suspend fun getOffersList(): List<Offers> {
+        val DealsList = mutableListOf<Offers>()
 
+        try {
+            val snapshot = db.collection("offers").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(Offers::class.java)
+                product?.let {
+                    DealsList.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return DealsList
+    }
 
 
 }

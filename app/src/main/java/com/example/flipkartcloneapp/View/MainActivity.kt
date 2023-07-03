@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager2.widget.ViewPager2
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
@@ -35,9 +36,13 @@ class MainActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        setTheme(R.style.mysplashcsreentime)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
         getSupportActionBar()?.hide()
+
+
+        setTheme(R.style.Theme_FlipkartCloneApp)
         setContentView(binding.root)
 
         if (!checkInternetConnection(this)) {

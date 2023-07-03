@@ -4,7 +4,6 @@
     android:layout_width="220dp"
     android:layout_height="120dp"
     android:layout_margin="5dp"
-    android:background="@drawable/roundborders"
     >
 
 
@@ -24,7 +23,7 @@
         <ImageView
             android:id="@+id/watchImg"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="100dp"
             android:scaleType="fitEnd"
 
             android:src="@drawable/ic_baseline_shopping_bag_24"
@@ -33,12 +32,12 @@
         <TextView
             android:id="@+id/tv_discount_on_cloths"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:layout_margin="5dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:fontFamily="serif"
-            android:text=" \n Up To \n 50% \n OFF"
+            android:text=" \n Up To \n  50% \n OFF"
             android:textAlignment="center"
             android:textSize="14sp"
             android:textStyle="bold" />

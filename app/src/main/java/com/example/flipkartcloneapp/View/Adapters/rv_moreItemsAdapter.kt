@@ -42,5 +42,4 @@ class rv_moreItemsAdapter(val pList: List<ProductList>) :
                 .into(tvImg)
         }
     }
-
 }
