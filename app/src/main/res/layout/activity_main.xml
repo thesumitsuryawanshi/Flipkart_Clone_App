@@ -34,7 +34,7 @@
 
         app:tabIndicatorAnimationMode="elastic"
         app:tabSelectedTextColor="@color/red"
-        tools:ignore="SpeakableTextPresentCheck" />
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

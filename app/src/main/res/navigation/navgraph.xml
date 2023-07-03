@@ -24,7 +24,11 @@
         android:id="@+id/homeFrag"
         android:name="com.example.flipkartcloneapp.View.fragments.HomeFrag"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFrag_to_showProductFrag"
+            app:destination="@id/showProductFrag" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFrag"
         android:name="com.example.flipkartcloneapp.View.fragments.NotificationFrag"

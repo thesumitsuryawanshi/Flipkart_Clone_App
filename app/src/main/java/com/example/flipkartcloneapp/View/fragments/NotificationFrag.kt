@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flipkartcloneapp.Adapters.rvNotificationsAdapters
+import com.example.flipkartcloneapp.View.Adapters.rvNotificationsAdapters
 import com.example.flipkartcloneapp.databinding.FragmentNotificationBinding
 
 
@@ -41,7 +41,7 @@ class NotificationFrag : Fragment() {
             "Notification8"
         )
 
-        val adapter = rvNotificationsAdapters(NotificaitionList)
+        val adapter = rvNotificationsAdapters(NotificaitionList, requireContext())
 
         binding.rvNotification.adapter = adapter
         binding.rvNotification.layoutManager =

@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.util
+package com.example.flipkartcloneapp.Model.util
 
 object Constants {
 

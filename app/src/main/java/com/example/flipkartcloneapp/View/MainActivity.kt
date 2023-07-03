@@ -10,30 +10,40 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager2.widget.ViewPager2
-import com.example.flipkartcloneapp.Adapters.ViewPagerAdapter
+import com.example.flipkartcloneapp.R
+import com.example.flipkartcloneapp.View.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
 import com.example.flipkartcloneapp.databinding.ActivityMainBinding
+
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private lateinit var mAuth: FirebaseAuth
     lateinit var tabLayout: TabLayout
     lateinit var viewpager: ViewPager2
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setTheme(R.style.mysplashcsreentime)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
         getSupportActionBar()?.hide()
+
+
+        setTheme(R.style.Theme_FlipkartCloneApp)
+        setContentView(binding.root)
 
         if (!checkInternetConnection(this)) {
             Toast.makeText(this, "Need Internet connection", Toast.LENGTH_SHORT).show()
@@ -111,5 +121,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
 }

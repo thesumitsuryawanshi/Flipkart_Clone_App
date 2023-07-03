@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.Adapters
+package com.example.flipkartcloneapp.View.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -34,6 +34,7 @@ class rvCategoriesAdapter(
         holder.itemView.setOnClickListener {
             Toast.makeText(context, "App working", Toast.LENGTH_SHORT).show()
         }
+
     }
 
     override fun getItemCount(): Int {

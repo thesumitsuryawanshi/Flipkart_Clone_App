@@ -5,17 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flipkartcloneapp.Adapters.*
+import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.R
+import com.example.flipkartcloneapp.View.Adapters.*
+import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.FragmentHomeBinding
+import com.google.gson.Gson
 import com.smarteist.autoimageslider.SliderView
 
-class HomeFrag : Fragment(R.layout.fragment_home) {
+
+class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLicked {
 
     lateinit var binding: FragmentHomeBinding
     lateinit var sliderAdapter: SliderAdapter
+    private lateinit var mainViewModel: MainViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,13 +34,23 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
 
         checkGooglelogin()
         AutoImageSlider()
-        RV_Category_SetUp()
-        RV_Offers_SetUp()
-        RV_BackToCityDealsSetUp()
-        Rv_BrandDeals()
-        RV_MoreItemsSetUp()
-
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+
+
+
+        RV_Category_SetUp()
+        RV_MoreItemsSetUp()
+        Rv_BrandDeals()
+        RV_BackToCityDealsSetUp()
+        RV_Offers_SetUp()
+
     }
 
     private fun checkGooglelogin() {
@@ -40,54 +58,69 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
     }
 
     private fun RV_MoreItemsSetUp() {
+        mainViewModel.pList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rv_moreItemsAdapter(newData, this)
+            binding.rvMoreItems.adapter = adapter
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer", "offer", "offer")
-        val adapter = rv_moreItemsAdapter(name)
-        binding.rvMoreItems.adapter = adapter
-
-        binding.rvMoreItems.layoutManager =
-            GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
-    }
-
-    private fun RV_BackToCityDealsSetUp() {
-
-        var name = listOf("offer", "offer", "offer", "offer", "offer","offer")
-        val adapter = rv_BackToCityDealsAdapter(name)
-        binding.rvBackToCity.adapter = adapter
-
-        binding.rvBackToCity.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.rvMoreItems.layoutManager =
+                GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        }
     }
 
     private fun Rv_BrandDeals() {
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer" )
-        val adapter = rv_clothing_and_Shoes_adapter(name)
-        binding.rvClothingAndShoes.adapter = adapter
+        mainViewModel.BDList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rv_brandDeals(newData, requireContext())
+            binding.rvBrandDeals.adapter = adapter
 
-        binding.rvClothingAndShoes.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.rvBrandDeals.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+    }
 
+    private fun RV_BackToCityDealsSetUp() {
+
+        mainViewModel.btcList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rv_BackToCityDealsAdapter(newData, requireContext())
+            binding.rvBackToCity.adapter = adapter
+
+            binding.rvBackToCity.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+
+        }
     }
 
     private fun RV_Offers_SetUp() {
+        mainViewModel.offerList.observe(viewLifecycleOwner) { newData ->
+            // Handle the updated data here
+            val adapter = rvOffersAdapter(newData, requireContext())
+            binding.rvOffers.adapter = adapter
 
-        var name = listOf("offer", "offer", "offer", "offer", "offer", "offer")
-        val adapter = rvOffersAdapter(name)
-        binding.rvOffers.adapter = adapter
-        binding.rvOffers.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.rvOffers.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        }
     }
 
     private fun RV_Category_SetUp() {
-        val name =listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")
-        val imgList =listOf(R.drawable.c_electronics,R.drawable.c_fasion , R.drawable.c_furniture
-            ,R.drawable.c_gifts,
-            R.drawable.c_grosery , R.drawable.c_mobiles, R.drawable.c_toys)
+        val name =
+            listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")
+        val imgList = listOf(
+            R.drawable.c_electronics,
+            R.drawable.c_fasion,
+            R.drawable.c_furniture,
+            R.drawable.c_gifts,
+            R.drawable.c_grosery,
+            R.drawable.c_mobiles,
+            R.drawable.c_toys
+        )
 
 
-        val adapter = rvCategoriesAdapter(name,imgList, requireContext() )
+        val adapter = rvCategoriesAdapter(name, imgList, requireContext())
         binding.rvCategories.adapter = adapter
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -110,6 +143,13 @@ class HomeFrag : Fragment(R.layout.fragment_home) {
         autoimgSlider.isAutoCycle = true
 
         binding.autoImgSlider.startAutoCycle()
+
+    }
+
+    override fun ClickedItem(item: ProductList) {
+        val bundle = Bundle()
+        bundle.putString("note", Gson().toJson(item))
+        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
 
     }
 }
