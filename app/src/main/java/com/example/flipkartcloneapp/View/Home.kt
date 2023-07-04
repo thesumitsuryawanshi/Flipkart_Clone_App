@@ -1,5 +1,6 @@
 package com.example.flipkartcloneapp.View
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -103,7 +104,7 @@ class Home : AppCompatActivity() {
                         .setTitle(" -: Developer Info :- ")
 
                         .setMessage(
-                            "  \n     A Software Engineer based in \n\n  India \uD83C\uDDEE\uD83C\uDDF3." +
+                            "  \n     A Software Engineer based in \n India \uD83C\uDDEE\uD83C\uDDF3." +
                                     "  \n\n     An extremely passionated guy who is always pushing his boundaries\uD83D\uDE80.\n" +
                                     "        " +
                                     "  an adaptable team player with huge Team-Spirit ⚡. " +
@@ -129,14 +130,24 @@ class Home : AppCompatActivity() {
                                 .launchUrl(this, Uri.parse("https://flowcv.com/resume/k842ss0bhn "))
                         }
 
-                        .setNegativeButton("❌") { dialog, _ -> dialog.dismiss() }
+                        .setNegativeButton("Close ❌") { dialog, _ -> dialog.dismiss() }
                         .create()
                         .show()
                 }
 
                 R.id.mi_shareApp -> {
                     Toast.makeText(this, "Share App", Toast.LENGTH_SHORT).show()
+
+                    val appPackageName = packageName
+                    val sharingIntent = Intent(Intent.ACTION_SEND)
+                    sharingIntent.type = "text/plain"
+                    sharingIntent.putExtra(
+                        Intent.EXTRA_TEXT,
+                        "Check out this amazing app: https://play.google.com/store/apps/details?id=$appPackageName"
+                    )
+                    startActivity(Intent.createChooser(sharingIntent, "Share via"))
                 }
+
                 R.id.mi_logout -> {
                     Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
                 }
@@ -151,11 +162,9 @@ class Home : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.top_tool_bar, menu)
         return true
     }
-
 
 }
