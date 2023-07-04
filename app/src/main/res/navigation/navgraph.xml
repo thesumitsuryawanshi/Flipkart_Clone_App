@@ -42,7 +42,14 @@
         android:label="showProductFrag"
         tools:layout="@layout/frag_view_product"
 
-        />
+        >
+        <action
+            android:id="@+id/action_showProductFrag_to_frag_Favourite"
+            app:destination="@id/frag_Favourite" />
+        <action
+            android:id="@+id/action_showProductFrag_to_cartFrag"
+            app:destination="@id/cartFrag" />
+    </fragment>
 
 
     <action
@@ -74,5 +81,10 @@
         app:popExitAnim="@anim/nav_default_pop_exit_anim"
 
         />
+    <fragment
+        android:id="@+id/frag_Favourite"
+        android:name="com.example.flipkartcloneapp.View.fragments.Frag_Favourite"
+        android:label="fragment_frag__favourite"
+        tools:layout="@layout/fragment_frag__favourite" />
 
 </navigation>

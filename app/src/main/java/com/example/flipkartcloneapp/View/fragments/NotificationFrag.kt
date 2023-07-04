@@ -43,8 +43,8 @@ class NotificationFrag : Fragment() {
 
         val adapter = rvNotificationsAdapters(NotificaitionList, requireContext())
 
-        binding.rvNotification.adapter = adapter
-        binding.rvNotification.layoutManager =
+        binding.rvNotoficationBinding.adapter = adapter
+        binding.rvNotoficationBinding.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 

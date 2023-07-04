@@ -12,5 +12,8 @@ data class ProductList (
     val pActualPrice: String = "",
     val pBankDiscount: String = "",
 
-    val pRatings: String = ""
+    val pRatings: String = "",
+    val pRatingCount: String = ""
 )
+
+

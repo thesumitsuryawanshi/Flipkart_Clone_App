@@ -19,7 +19,6 @@ class Home : AppCompatActivity() {
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var binding: ActivityHomeBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,7 +38,7 @@ class Home : AppCompatActivity() {
             when (menuitem.itemId) {
 
                 R.id.mi_Cart -> {
-                    // TODO:  Need to implement :  after clicking this toptoolbar cart icon CartFrag should show up.
+
                     Navigation.findNavController(binding.navHostFragment)
                         .navigate(R.id.action_global_cartFrag)
                     Snackbar.make(binding.root, " Cart frag  ", Snackbar.LENGTH_LONG)

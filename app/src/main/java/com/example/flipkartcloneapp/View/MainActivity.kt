@@ -15,6 +15,7 @@ import com.example.flipkartcloneapp.View.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
 import com.example.flipkartcloneapp.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -88,6 +89,7 @@ class MainActivity : AppCompatActivity() {
 
         if (user != null) {
             val i = Intent(this, Home::class.java)
+            Snackbar.make(binding.root, "Sign in Successful", Snackbar.LENGTH_LONG).show()
             startActivity(i)
         } else {
             Toast.makeText(this, "Please Sign in first.", Toast.LENGTH_SHORT).show()

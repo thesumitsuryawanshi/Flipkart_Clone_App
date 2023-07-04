@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.R
-import com.example.flipkartcloneapp.View.Adapters.*
+import com.example.flipkartcloneapp.View.Adapters.HomeFragAdapter.*
+import com.example.flipkartcloneapp.View.Adapters.SliderAdapter
 import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.FragmentHomeBinding
 import com.google.gson.Gson
@@ -41,8 +42,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         super.onViewCreated(view, savedInstanceState)
 
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-
-
 
 
         RV_Category_SetUp()
@@ -150,6 +149,5 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         val bundle = Bundle()
         bundle.putString("note", Gson().toJson(item))
         findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
-
     }
 }
