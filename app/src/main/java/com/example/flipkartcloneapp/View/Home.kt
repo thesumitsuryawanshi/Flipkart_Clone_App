@@ -1,14 +1,19 @@
 package com.example.flipkartcloneapp.View
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
+import com.example.flipkartcloneapp.databinding.NavdrawerHeaderLayoutBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,6 +23,8 @@ class Home : AppCompatActivity() {
 
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var binding: ActivityHomeBinding
+    lateinit var navbinding: NavdrawerHeaderLayoutBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +36,12 @@ class Home : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        setUpDrawerLayout()
+
+
+
+
         ToptoolbarItemCLicks()
+        setUpDrawerLayout()
     }
 
     private fun ToptoolbarItemCLicks() {
@@ -75,6 +86,63 @@ class Home : AppCompatActivity() {
 
         binding.mainDrawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
+
+        binding.navDrawer.setNavigationItemSelectedListener {
+
+
+            when (it.itemId) {
+                R.id.mi_favourite -> {
+                    Toast.makeText(this, "Fav ", Toast.LENGTH_SHORT).show()
+//                    findNavController(binding.root.id).navigate(R.id.action_homeFrag_to_showProductFrag)
+//                    Snackbar.make(binding.root, "fav btn clicked ", Snackbar.LENGTH_SHORT).show()
+                }
+
+                R.id.mi_about -> {
+
+                    AlertDialog.Builder(this)
+                        .setTitle(" -: Developer Info :- ")
+
+                        .setMessage(
+                            "  \n     A Software Engineer based in \n\n  India \uD83C\uDDEE\uD83C\uDDF3." +
+                                    "  \n\n     An extremely passionated guy who is always pushing his boundaries\uD83D\uDE80.\n" +
+                                    "        " +
+                                    "  an adaptable team player with huge Team-Spirit ⚡. " +
+                                    " \n Thriving in collaborative environments " +
+                                    "  & excelling myself in independent projects as well. " +
+                                    "  \n \n      My commitment \uD83E\uDD1D to Quality work with mindset of constantly learner \uD83D\uDCC6 will definately bring massive value to the " +
+                                    "  organization for growth & this makes me Unique asset for Company \uD83C\uDFE2." +
+                                    "  \n\n\n"
+                        )
+                        .setIcon(R.drawable.studboy)
+                        .setPositiveButton("visit my Website \uD83C\uDF10 ")
+                        { _, _ ->
+                            CustomTabsIntent.Builder()
+                                .build()
+                                .launchUrl(
+                                    this,
+                                    Uri.parse("https://thesumitsuryawanshi.github.io ")
+                                )
+                        }
+                        .setNeutralButton("CheckOut my CV \uD83D\uDCDD ") { _, _ ->
+                            CustomTabsIntent.Builder()
+                                .build()
+                                .launchUrl(this, Uri.parse("https://flowcv.com/resume/k842ss0bhn "))
+                        }
+
+                        .setNegativeButton("❌") { dialog, _ -> dialog.dismiss() }
+                        .create()
+                        .show()
+                }
+
+                R.id.mi_shareApp -> {
+                    Toast.makeText(this, "Share App", Toast.LENGTH_SHORT).show()
+                }
+                R.id.mi_logout -> {
+                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                }
+            }
+            true
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

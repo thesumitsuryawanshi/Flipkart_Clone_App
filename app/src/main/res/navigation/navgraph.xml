@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_homeFrag_to_showProductFrag"
             app:destination="@id/showProductFrag" />
+        <action
+            android:id="@+id/action_homeFrag_to_frag_Favourite"
+            app:destination="@id/frag_Favourite" />
     </fragment>
     <fragment
         android:id="@+id/notificationFrag"

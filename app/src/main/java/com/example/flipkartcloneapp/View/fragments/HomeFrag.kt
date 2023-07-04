@@ -150,4 +150,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         bundle.putString("note", Gson().toJson(item))
         findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
     }
+
+
 }
