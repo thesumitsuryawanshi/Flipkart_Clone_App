@@ -43,7 +43,7 @@ class rv_brandDeals(val BDdata: List<BrandDealsList>, val context: Context) :
     class ViewHolder(binding: RvBrandDealsBinding) : RecyclerView.ViewHolder(binding.root) {
 
         val tvDiscount = binding.tvDiscountOnCloths
-        val imgUrl = binding.watchImg
+        val imgUrl = binding.ivwatchImg
 
         fun bindImage(imageUrl: String) {
             Glide.with(itemView)

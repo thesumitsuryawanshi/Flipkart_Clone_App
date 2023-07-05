@@ -42,7 +42,7 @@ class rv_moreItemsAdapter(val pList: List<ProductList>, private val listener: It
 
         val tvTitle = binding.tvTitle
         val tvPrice = binding.tvPrice
-        val tvImg = binding.watchImg
+        val tvImg = binding.ivmiImg
 
         fun bindImage(imageUrl: String) {
             Glide.with(itemView)

@@ -2,39 +2,53 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cd_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
-        android:layout_marginHorizontal="13dp"
+        android:layout_marginHorizontal="12dp"
         app:cardElevation="14dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/notificationImg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_checkbox"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:fontFamily="serif"
                 android:text="Notification msg"
                 android:textAlignment="center"
-                android:textSize="18sp"
+                android:padding="15dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -44,12 +58,15 @@
         android:id="@+id/tv_timing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_marginTop="5dp"
         android:text="09:36 PM"
+        android:fontFamily="serif"
+        android:textStyle="bold"
         android:textSize="12sp"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+
 
         app:layout_constraintTop_toBottomOf="@id/cd_cardview" />
 

@@ -19,7 +19,7 @@
 
 
         <ImageView
-            android:id="@+id/watchImg"
+            android:id="@+id/ivbtcdImg"
             android:layout_width="190dp"
             android:layout_height="95dp"
             android:scaleType="fitEnd"

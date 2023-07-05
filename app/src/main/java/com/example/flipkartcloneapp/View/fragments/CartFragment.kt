@@ -32,18 +32,13 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         assignDataTOUi()
-
     }
 
     private fun assignDataTOUi() {
 
         val _data = arguments?.getString("newCartItem")
         cartData = Gson().fromJson(_data, cartItems::class.java)
-
-
 
         Snackbar.make(binding.root, "Item Added to Cart", Snackbar.LENGTH_LONG).show()
         Log.d("mytag", "$cartData")

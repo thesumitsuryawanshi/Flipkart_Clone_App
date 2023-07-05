@@ -14,8 +14,8 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.navigation.Navigation
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.ActivityHomeBinding
-import com.example.flipkartcloneapp.databinding.NavdrawerHeaderLayoutBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -24,7 +24,7 @@ class Home : AppCompatActivity() {
 
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var binding: ActivityHomeBinding
-    lateinit var navbinding: NavdrawerHeaderLayoutBinding
+    private lateinit var mAuth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,8 +37,7 @@ class Home : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-
-
+        mAuth = FirebaseAuth.getInstance()
 
 
         ToptoolbarItemCLicks()
@@ -52,17 +51,14 @@ class Home : AppCompatActivity() {
                 R.id.mi_Cart -> {
 
                     Navigation.findNavController(binding.navHostFragment)
-                        .navigate(R.id.action_global_cartFrag)
+                        .navigate(R.id.action_homeFrag_to_cartFrag)
                     Snackbar.make(binding.root, " Cart frag  ", Snackbar.LENGTH_LONG)
                         .show()
                 }
                 R.id.mi_notifications -> {
                     Navigation.findNavController(binding.navHostFragment)
                         .navigate(R.id.GlobalActionToNotificationFrag)
-                    Snackbar.make(binding.root, "notifications frag", Snackbar.LENGTH_LONG)
-                        .show()
                 }
-
                 else -> {
                     Snackbar.make(
                         binding.root,
@@ -149,7 +145,19 @@ class Home : AppCompatActivity() {
                 }
 
                 R.id.mi_logout -> {
-                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+
+
+                    Snackbar.make(binding.root, "Sign Out Successful.", Snackbar.LENGTH_SHORT)
+                        .show()
+                    mAuth.signOut()
+
+                    val homeIntent = Intent(Intent.ACTION_MAIN)
+                    homeIntent.addCategory(Intent.CATEGORY_HOME)
+                    homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(homeIntent)
+                    finish()
+
+
                 }
             }
             true
@@ -162,6 +170,7 @@ class Home : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.top_tool_bar, menu)
         return true

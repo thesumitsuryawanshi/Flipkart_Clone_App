@@ -39,7 +39,7 @@ class rvOffersAdapter(val offerList: List<Offers>, val context: Context) :
     class ViewHolder(binding: HRvOffersBinding) : RecyclerView.ViewHolder(binding.root) {
 
         val tvOffer = binding.tvDiscount
-        val tvImg = binding.watchImg
+        val tvImg = binding.icOfferImg
 
         fun bindImage(imageUrl: String) {
             Glide.with(itemView)

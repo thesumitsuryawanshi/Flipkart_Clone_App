@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.rvNotificationsAdapters
 import com.example.flipkartcloneapp.databinding.FragmentNotificationBinding
 
@@ -23,25 +24,57 @@ class NotificationFrag : Fragment() {
 
 
         setUpRvNotificaition()
-
-
         return binding.root
     }
+
 
     private fun setUpRvNotificaition() {
 
         val NotificaitionList = listOf(
-            "Notification1",
-            "Notification2",
-            "Notification3",
+            "Order Placed Successfully ❤️",
+            "Comfirmation pending \uD83E\uDD14 \uD83D\uDEEB ",
+            "Order \uD83D\uDCE6  Arriving \n at your door\uD83D\uDEAA in 10 min.",
             "Notification4",
             "Notification5",
             "Notification6",
             "Notification7",
-            "Notification8"
+            "Notification8",
+            "Notification9",
+            "Notification10",
         )
 
-        val adapter = rvNotificationsAdapters(NotificaitionList, requireContext())
+        val NotificationimgList = listOf(
+            R.drawable.ic_baseline_favorite_24,
+            R.drawable.ic_question,
+            R.drawable.ic_face,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert,
+            R.drawable.ic_alert
+        )
+
+        val NotificaitiontimeList = listOf(
+            "⌚ 9:12 am",
+            "⌚ 3:02 pm",
+            "⌚ 6:12 pm",
+            "⌚ 9:01 pm",
+            "⌚ 7:12 am",
+            "⌚ 9:12 am",
+            "⌚ 6:12 pm",
+            "⌚ 9:01 pm",
+            "⌚ 7:12 am",
+            "⌚ 9:12 am"
+        )
+
+        val adapter = rvNotificationsAdapters(
+            NotificaitionList,
+            NotificaitiontimeList,
+            NotificationimgList,
+            requireContext()
+        )
 
         binding.rvNotoficationBinding.adapter = adapter
         binding.rvNotoficationBinding.layoutManager =

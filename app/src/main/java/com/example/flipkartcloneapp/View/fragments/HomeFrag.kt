@@ -151,5 +151,4 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
     }
 
-
 }

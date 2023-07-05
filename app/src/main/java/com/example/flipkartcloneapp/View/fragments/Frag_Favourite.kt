@@ -24,8 +24,6 @@ class Frag_Favourite : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         Toast.makeText(requireContext(), "arrived at Fav ", Toast.LENGTH_SHORT).show()
-
     }
 }

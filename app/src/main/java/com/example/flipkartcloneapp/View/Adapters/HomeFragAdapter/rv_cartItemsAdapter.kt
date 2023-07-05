@@ -17,7 +17,6 @@ class rv_cartItemsAdapter(var cartItemList: cartItems) :
         val view =
             RvMycartItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = ViewHolder(view)
-
         return viewholder
 
     }
@@ -46,8 +45,5 @@ class rv_cartItemsAdapter(var cartItemList: cartItems) :
                 .load(imageUrl)
                 .into(ivImg)
         }
-
     }
-
-
 }

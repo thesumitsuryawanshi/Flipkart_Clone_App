@@ -22,7 +22,9 @@
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_code.xml" value="0.206" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_logout.xml" value="0.1705" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_menu.xml" value="0.3635" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_question.xml" value="0.115" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_supercoins.xml" value="0.3635" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/notification_dot.xml" value="0.115" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/roundborders.xml" value="0.307" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/splash_img.xml" value="0.2595" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_home.xml" value="0.33" />
@@ -34,6 +36,7 @@
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_notification.xml" value="0.5453125" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_categories.xml" value="0.333786231884058" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_offers.xml" value="0.75" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/item_view_pager.xml" value="0.4574358974358974" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/navdrawer_header_layout.xml" value="0.3625" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_back_to_city_deals.xml" value="0.5421195652173914" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_brand_deals.xml" value="0.67" />

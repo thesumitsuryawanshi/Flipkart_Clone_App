@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var tabLayout: TabLayout
     lateinit var viewpager: ViewPager2
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -97,8 +96,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewPagerInit() {
-
-
         tabLayout = binding.tlTabLayout
         viewpager = binding.vpViewpager
 

@@ -1,4 +1,4 @@
-package com.example.flipkartcloneapp.View.Adapters.HomeFragAdapter
+ package com.example.flipkartcloneapp.View.Adapters.HomeFragAdapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -42,7 +42,7 @@ class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>, val context:
     class ViewHolder(binding: RvBackToCityDealsBinding) : RecyclerView.ViewHolder(binding.root) {
 
         val tvDiscount = binding.tvDiscount
-        val tvImg = binding.watchImg
+        val tvImg = binding.ivbtcdImg
 
         fun bindImage(imageUrl: String) {
             Glide.with(itemView)
