@@ -33,9 +33,10 @@ class Home : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         supportActionBar?.hide()
+        setContentView(binding.root)
+
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -49,11 +50,9 @@ class Home : AppCompatActivity() {
             when (menuitem.itemId) {
 
                 R.id.mi_Cart -> {
-
+                    Snackbar.make(binding.root, " Cart frag  ", Snackbar.LENGTH_LONG).show()
                     Navigation.findNavController(binding.navHostFragment)
                         .navigate(R.id.action_homeFrag_to_cartFrag)
-                    Snackbar.make(binding.root, " Cart frag  ", Snackbar.LENGTH_LONG)
-                        .show()
                 }
                 R.id.mi_notifications -> {
                     Navigation.findNavController(binding.navHostFragment)

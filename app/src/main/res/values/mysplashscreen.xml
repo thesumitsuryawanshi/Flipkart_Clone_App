@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#fff</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/flipkartlogo4</item>
+        <item name="postSplashScreenTheme">@style/Theme.FlipkartCloneApp</item>
+    </style>
+
+</resources>

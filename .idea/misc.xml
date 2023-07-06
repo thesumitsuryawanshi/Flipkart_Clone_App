@@ -17,9 +17,12 @@
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable-v24/bground.xml" value="0.1605" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1705" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_alert.xml" value="0.102" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.4095" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_baseline_watch_24.xml" value="0.1705" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_cart.xml" value="0.102" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_code.xml" value="0.206" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_logo.xml" value="0.334" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_logo_1.xml" value="0.334" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_logout.xml" value="0.1705" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_menu.xml" value="0.3635" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_question.xml" value="0.115" />
@@ -27,6 +30,7 @@
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/notification_dot.xml" value="0.115" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/roundborders.xml" value="0.307" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/splash_img.xml" value="0.2595" />
+        <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/splash_screen.xml" value="0.4095" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/Flipkart_Clone_App/app/src/main/res/layout/frag_view_product.xml" value="0.5" />

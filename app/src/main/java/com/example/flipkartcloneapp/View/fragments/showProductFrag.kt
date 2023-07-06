@@ -14,7 +14,9 @@ import com.example.flipkartcloneapp.databinding.FragViewProductBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 
-class showProductFrag() :
+class
+
+showProductFrag() :
     Fragment(R.layout.frag_view_product) {
 
     lateinit var binding: FragViewProductBinding

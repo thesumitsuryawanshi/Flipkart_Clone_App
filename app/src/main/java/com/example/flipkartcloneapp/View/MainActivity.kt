@@ -7,16 +7,17 @@ import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager2.widget.ViewPager2
-import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.ViewPagerAdapter
 import com.example.flipkartcloneapp.View.fragments.Login
 import com.example.flipkartcloneapp.View.fragments.SignUp
+import com.example.flipkartcloneapp.ViewModels.MainViewModel
 import com.example.flipkartcloneapp.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
-
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -30,19 +31,26 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     lateinit var tabLayout: TabLayout
     lateinit var viewpager: ViewPager2
+    private val viewmodel: MainViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        installSplashScreen().apply {
+            setKeepVisibleCondition {
+                viewmodel.isLoading.value!!
+            }
+        }
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        setTheme(R.style.mysplashcsreentime)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         getSupportActionBar()?.hide()
 
 
-        setTheme(R.style.Theme_FlipkartCloneApp)
+
+
         setContentView(binding.root)
 
         if (!checkInternetConnection(this)) {
@@ -51,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         CheckGoogleSignIn()
         viewPagerInit()
+
     }
 
     private fun checkInternetConnection(context: Context): Boolean {

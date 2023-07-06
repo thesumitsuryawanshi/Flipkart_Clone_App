@@ -17,7 +17,6 @@ public class productDatabase {
 
     suspend fun getProductsData(): List<ProductList> {
         val productList = mutableListOf<ProductList>()
-
         try {
             val snapshot = db.collection("ProductList").get().await()
             for (document in snapshot.documents) {
@@ -88,7 +87,6 @@ public class productDatabase {
         }
         return DealsList
     }
-
 
 }
 

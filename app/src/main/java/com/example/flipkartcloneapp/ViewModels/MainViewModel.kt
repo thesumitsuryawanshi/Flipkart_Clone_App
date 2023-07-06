@@ -1,6 +1,7 @@
 package com.example.flipkartcloneapp.ViewModels
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.flipkartcloneapp.Model.entities.BrandDealsList
@@ -9,6 +10,7 @@ import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.Model.entities.backToCityDeals
 import com.example.flipkartcloneapp.Model.repository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,6 +20,10 @@ class MainViewModel
 constructor(
     private val repository: repository
 ) : ViewModel() {
+
+    private var _isLoading: MutableLiveData<Boolean> = MutableLiveData(true)
+    val isLoading: MutableLiveData<Boolean> = _isLoading
+
 
     val pList: LiveData<List<ProductList>>
         get() = repository.ProductListData
@@ -33,7 +39,13 @@ constructor(
 
 
     init {
+
+
         viewModelScope.launch {
+
+            delay(3000)
+            _isLoading.value = false
+
 
             repository.getProductListData()
             repository.getBrandListData()
