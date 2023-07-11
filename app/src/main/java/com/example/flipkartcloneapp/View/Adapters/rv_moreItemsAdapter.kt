@@ -11,10 +11,8 @@ class rv_moreItemsAdapter(val pList: List<ProductList>, private val listener: It
     RecyclerView.Adapter<rv_moreItemsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         val view = RvMoreItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = ViewHolder(view)
-
 
         return viewholder
     }
@@ -29,8 +27,6 @@ class rv_moreItemsAdapter(val pList: List<ProductList>, private val listener: It
         holder.itemView.rootView.setOnClickListener {
             listener?.ClickedItem(product)
         }
-
-
     }
 
     override fun getItemCount(): Int {

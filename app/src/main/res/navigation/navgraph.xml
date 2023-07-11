@@ -42,7 +42,11 @@
         android:label="showProductFrag"
         tools:layout="@layout/frag_view_product"
 
-        />
+        >
+        <action
+            android:id="@+id/action_showProductFrag_to_allProducts"
+            app:destination="@id/allProducts" />
+    </fragment>
 
 
     <action
@@ -68,6 +72,31 @@
     <action
         android:id="@+id/action_global_cartFrag"
         app:destination="@id/cartFrag"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+
+        />
+    <fragment
+        android:id="@+id/allProducts"
+        android:name="com.example.flipkartcloneapp.View.fragments.AllProductsFragment"
+        android:label="fragment_all_products"
+        tools:layout="@layout/fragment_all_products" >
+        <action
+            android:id="@+id/action_allProducts_to_showProductFrag"
+            app:destination="@id/showProductFrag" />
+        <action
+            android:id="@+id/action_allProducts_to_showProductFrag2"
+            app:destination="@id/showProductFrag" />
+    </fragment>
+
+
+
+    <action
+        android:id="@+id/GlobalActionTAllProductsFrag"
+        app:destination="@id/allProducts"
+
         app:enterAnim="@anim/nav_default_enter_anim"
         app:exitAnim="@anim/nav_default_exit_anim"
         app:popEnterAnim="@anim/nav_default_pop_enter_anim"

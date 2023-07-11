@@ -1,12 +1,18 @@
 package com.example.flipkartcloneapp.View.Adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.HRvCategoriesBinding
+import com.google.gson.Gson
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 class rvCategoriesAdapter(
     val category: List<String>,
@@ -32,7 +38,9 @@ class rvCategoriesAdapter(
             .into(holder.Img)
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, "App working", Toast.LENGTH_SHORT).show()
+            val bundle = Bundle()
+            bundle.putString("note", Gson().toJson(category))
+            findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
         }
 
     }

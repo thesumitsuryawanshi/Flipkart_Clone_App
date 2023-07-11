@@ -24,7 +24,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
     lateinit var sliderAdapter: SliderAdapter
     private lateinit var mainViewModel: MainViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,15 +41,11 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
 
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-
-
-
         RV_Category_SetUp()
         RV_MoreItemsSetUp()
         Rv_BrandDeals()
         RV_BackToCityDealsSetUp()
         RV_Offers_SetUp()
-
     }
 
     private fun checkGooglelogin() {
@@ -124,6 +119,8 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         binding.rvCategories.adapter = adapter
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+
     }
 
     private fun AutoImageSlider() {
@@ -152,4 +149,5 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
 
     }
+
 }

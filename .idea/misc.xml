@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_all_products.xml" value="0.18" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_home.xml" value="0.2672239108409321" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_categories.xml" value="0.2672239108409321" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_more_items.xml" value="0.55" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable-v24/bgroundtop.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable/ic_baseline_mail_outline_24.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.25833333333333336" />
