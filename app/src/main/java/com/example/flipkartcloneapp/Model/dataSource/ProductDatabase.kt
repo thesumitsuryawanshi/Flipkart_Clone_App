@@ -1,6 +1,10 @@
 package com.example.flipkartcloneapp.Model.dataSource
 
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.flipkartcloneapp.Model.entities.*
+import com.example.flipkartcloneapp.View.MainActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -122,7 +126,6 @@ public class productDatabase {
         }
         return List
     }
-
     suspend fun getCFurProducts(): List<AllProducts> {
         val List = mutableListOf<AllProducts>()
 
@@ -140,7 +143,6 @@ public class productDatabase {
         }
         return List
     }
-
     suspend fun getCGProducts(): List<AllProducts> {
         val List = mutableListOf<AllProducts>()
 
@@ -158,7 +160,6 @@ public class productDatabase {
         }
         return List
     }
-
     suspend fun getCMProducts(): List<AllProducts> {
         val List = mutableListOf<AllProducts>()
 
@@ -176,7 +177,6 @@ public class productDatabase {
         }
         return List
     }
-
     suspend fun getCTProducts(): List<AllProducts> {
         val List = mutableListOf<AllProducts>()
 
@@ -194,5 +194,25 @@ public class productDatabase {
         }
         return List
     }
+
+
+    suspend fun getrvofferList(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("offersList").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
 }
 

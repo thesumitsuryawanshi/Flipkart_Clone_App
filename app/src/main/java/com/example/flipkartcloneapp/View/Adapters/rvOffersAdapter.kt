@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.Offers
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.HRvOffersBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 
 class rvOffersAdapter(val offerList: List<Offers>, val context: Context) :
@@ -31,10 +32,13 @@ class rvOffersAdapter(val offerList: List<Offers>, val context: Context) :
         holder.bindImage(product.imgUrl)
 
         holder.itemView.setOnClickListener {
+            
             val value = "offers_value"
             val bundle = Bundle()
-            bundle.putString("offers_key", Gson().toJson(value ))
-            Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
+            bundle.putString("offers_key", Gson().toJson(value))
+
+            Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag,bundle)
+
         }
     }
 

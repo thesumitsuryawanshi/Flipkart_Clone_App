@@ -107,9 +107,9 @@ class AllProductsFragment : Fragment() {
         //--------------------------------------------------------------------------------------------------------------------
 
         arguments?.getString("offers_key")?.apply {
-            mainViewModel.CEList.observe(viewLifecycleOwner) { newData ->
+            mainViewModel.getrvofferList.observe(viewLifecycleOwner) { newData ->
 
-
+                Snackbar.make(binding.root, "Data fetching success.\n \n $newData", Snackbar.LENGTH_SHORT).show()
                 // Handle the updated data here
                 val adapter = rv_AllItemsAdapter(newData)
                 binding.rvAllItemsList.adapter = adapter

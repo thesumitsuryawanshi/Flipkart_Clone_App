@@ -20,7 +20,6 @@ class showProductFrag() :
     private var ProductData: ProductList? = null
     private var currentItem: AllProducts? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,7 +33,6 @@ class showProductFrag() :
         super.onViewCreated(view, savedInstanceState)
         assignDataToUI()
     }
-
     private fun assignDataToUI() {
 
         val _data = arguments?.getString("note")

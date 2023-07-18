@@ -22,6 +22,7 @@ class repository
     private val _getCMList= MutableLiveData<List<AllProducts>>()
     private val _getCTList= MutableLiveData<List<AllProducts>>()
 
+    private val _getrvofferList= MutableLiveData<List<AllProducts>>()
 
 
     val ProductListData: LiveData<List<ProductList>>
@@ -32,6 +33,7 @@ class repository
         get() = _bTCmutableLivedata
     val offerListData: LiveData<List<Offers>>
         get() = _offermutableLivedata
+
 
     //----------------------------------------------------------------//----------------------------------------------------------------
             //categories
@@ -52,6 +54,11 @@ class repository
 
     val getCTListData: LiveData<List<AllProducts>>
         get() = _getCTList
+
+    //----------------------------------------------------------------//----------------------------------------------------------------
+
+    val getrvofferList: LiveData<List<AllProducts>>
+        get() = _getrvofferList
 
 
     //----------------------------------------------------------------//----------------------------------------------------------------
@@ -109,4 +116,9 @@ class repository
 
     //----------------------------------------------------------------//----------------------------------------------------------------
 
+
+    suspend fun getrvofferList() {
+        val _Alldata = dataSource.getrvofferList()
+        _getrvofferList.postValue(_Alldata)
+    }
 }

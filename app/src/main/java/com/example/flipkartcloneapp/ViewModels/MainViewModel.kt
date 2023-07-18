@@ -1,10 +1,12 @@
 package com.example.flipkartcloneapp.ViewModels
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.flipkartcloneapp.Model.entities.*
 import com.example.flipkartcloneapp.Model.repository
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,25 +31,25 @@ constructor(
         get() = repository.offerListData
 
 //----------------------------------------------------------------
+   //category
     val CEList: LiveData<List<AllProducts>>
         get() = repository.getCEListData
-
-
     val CFList: LiveData<List<AllProducts>>
         get() = repository.getCFListData
-
-
     val CFurList: LiveData<List<AllProducts>>
         get() = repository.getCFurListData
-
     val CGList: LiveData<List<AllProducts>>
         get() = repository.getCGListData
-
     val CMList: LiveData<List<AllProducts>>
         get() = repository.getCMListData
     val CTList: LiveData<List<AllProducts>>
         get() = repository.getCTListData
+//----------------------------------------------------------------
+//offers list (rvoffer)
+val getrvofferList: LiveData<List<AllProducts>>
+    get() = repository.getrvofferList
 
+//----------------------------------------------------------------
 
     init {
         viewModelScope.launch {
@@ -63,6 +65,9 @@ constructor(
             repository.getCGProducts()
             repository.getCMProducts()
             repository.getCTProducts()
+
+            repository.getrvofferList()
+
         }
 
     }

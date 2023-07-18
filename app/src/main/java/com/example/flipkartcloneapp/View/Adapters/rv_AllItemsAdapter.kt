@@ -43,10 +43,6 @@ class rv_AllItemsAdapter(val pList: List<AllProducts>) :
                 "This goes to ShowProductFrag ",
                 Snackbar.LENGTH_SHORT
             ).show()
-//            val value = category
-//            val bundle = Bundle()
-//            bundle.putString("category_key$_Cname", Gson().toJson(value))
-//            Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
 
             val value = currentItem
             val bundle = Bundle()
