@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.flipkartcloneapp.Model.entities.AllProducts
 import com.example.flipkartcloneapp.Model.entities.ProductList
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.FragViewProductBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 
 class showProductFrag() :
@@ -16,6 +18,7 @@ class showProductFrag() :
 
     lateinit var binding: FragViewProductBinding
     private var ProductData: ProductList? = null
+    private var currentItem: AllProducts? = null
 
 
     override fun onCreateView(
@@ -24,8 +27,6 @@ class showProductFrag() :
     ): View? {
 
         binding = FragViewProductBinding.inflate(inflater, container, false)
-
-
         return binding.root
     }
 
@@ -35,8 +36,7 @@ class showProductFrag() :
     }
 
     private fun assignDataToUI() {
-        /// TODO: need to uadte the values in firebase firestiore database with emoji's
-        /// TODO: need aesthetical touch on the showProductFragment
+
         val _data = arguments?.getString("note")
         if (_data != null) {
             ProductData = Gson().fromJson(_data, ProductList::class.java)
@@ -48,6 +48,30 @@ class showProductFrag() :
                 binding.tvPrice.text = it?.pPrice
                 Glide.with(this)
                     .load(it?.pImgUrl)
+                    .into(binding.ivProductImage)
+            }
+        } else {
+        }
+
+        val _currentItem = arguments?.getString("currentItem")
+        if (_currentItem != null) {
+
+            view?.let {
+                Snackbar.make(
+                    it,
+                    "currentItem in  ShowProductFrag ",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+
+            currentItem = Gson().fromJson(_currentItem, AllProducts::class.java)
+            currentItem.let {
+                binding.tvPrice.text = it?.price
+                binding.tvActualPrice.text = " "
+                binding.tvDiscountOnProductPrice.text = " "
+                binding.tvProductName.text = it?.title
+                Glide.with(this)
+                    .load(it?.img)
                     .into(binding.ivProductImage)
             }
         } else {

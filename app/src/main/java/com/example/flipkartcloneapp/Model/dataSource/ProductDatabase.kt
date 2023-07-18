@@ -1,9 +1,6 @@
 package com.example.flipkartcloneapp.Model.dataSource
 
-import com.example.flipkartcloneapp.Model.entities.BrandDealsList
-import com.example.flipkartcloneapp.Model.entities.Offers
-import com.example.flipkartcloneapp.Model.entities.ProductList
-import com.example.flipkartcloneapp.Model.entities.backToCityDeals
+import com.example.flipkartcloneapp.Model.entities.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -89,6 +86,113 @@ public class productDatabase {
         return DealsList
     }
 
+    //------------------------------------------------------------------------------------------------
 
+    suspend fun getCEProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Electronics").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+    suspend fun getCFProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Fasion").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+    suspend fun getCFurProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Furniture").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+    suspend fun getCGProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Grosery").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+    suspend fun getCMProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Mobiles").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+    suspend fun getCTProducts(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("Toys").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
 }
 

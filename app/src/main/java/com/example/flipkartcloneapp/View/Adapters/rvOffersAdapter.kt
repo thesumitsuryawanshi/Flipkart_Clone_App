@@ -1,13 +1,17 @@
 package com.example.flipkartcloneapp.View.Adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.Offers
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.HRvOffersBinding
+import com.google.gson.Gson
 
 class rvOffersAdapter(val offerList: List<Offers>, val context: Context) :
     RecyclerView.Adapter<rvOffersAdapter.ViewHolder>() {
@@ -27,9 +31,11 @@ class rvOffersAdapter(val offerList: List<Offers>, val context: Context) :
         holder.bindImage(product.imgUrl)
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, "App working", Toast.LENGTH_SHORT).show()
+            val value = "offers_value"
+            val bundle = Bundle()
+            bundle.putString("offers_key", Gson().toJson(value ))
+            Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
         }
-
     }
 
     override fun getItemCount(): Int {

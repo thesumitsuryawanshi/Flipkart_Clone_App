@@ -114,5 +114,4 @@ class SignUp : Fragment() {
             spinner.adapter = adapter
         }
     }
-
 }

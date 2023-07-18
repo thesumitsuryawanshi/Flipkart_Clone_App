@@ -84,8 +84,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
 
             binding.rvBackToCity.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-
         }
     }
 
@@ -102,24 +100,20 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
     }
 
     private fun RV_Category_SetUp() {
-        val name =
-            listOf("Electronics", "Fasion", "Furniture", "Gifts", "Grosery", "Mobiles", "Toys")
+        val name =  listOf("Electronics", "Fasion", "Furniture", "Grosery", "Mobiles", "Toys")
         val imgList = listOf(
             R.drawable.c_electronics,
             R.drawable.c_fasion,
             R.drawable.c_furniture,
-            R.drawable.c_gifts,
             R.drawable.c_grosery,
             R.drawable.c_mobiles,
             R.drawable.c_toys
         )
 
-
         val adapter = rvCategoriesAdapter(name, imgList, requireContext())
         binding.rvCategories.adapter = adapter
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
 
     }
 
@@ -149,5 +143,4 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
 
     }
-
 }

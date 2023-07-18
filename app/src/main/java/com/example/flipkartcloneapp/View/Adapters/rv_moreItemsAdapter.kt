@@ -19,7 +19,7 @@ class rv_moreItemsAdapter(val pList: List<ProductList>, private val listener: It
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = pList[position]
-        holder.tvTitle.text = product.pTitle
+        holder.tvTitle.text = product.pName
         holder.tvPrice.text = product.pActualPrice
         holder.bindImage(product.pImgUrl)
 

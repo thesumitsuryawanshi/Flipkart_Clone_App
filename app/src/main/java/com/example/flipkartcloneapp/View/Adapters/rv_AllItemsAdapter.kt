@@ -1,18 +1,18 @@
 package com.example.flipkartcloneapp.View.Adapters
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.flipkartcloneapp.Model.entities.ProductList
+import com.example.flipkartcloneapp.Model.entities.AllProducts
+import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.databinding.RvMoreItemsBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 
-class rv_AllItemsAdapter(
-    val pList: List<String>,
-    val ImgList: List<Int>,
-    private val listener: ItemsCLickedFromAllProducts
-) :
+class rv_AllItemsAdapter(val pList: List<AllProducts>) :
     RecyclerView.Adapter<rv_AllItemsAdapter.AllItemsAdapterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllItemsAdapterViewHolder {
@@ -25,20 +25,33 @@ class rv_AllItemsAdapter(
 
     override fun onBindViewHolder(holder: AllItemsAdapterViewHolder, position: Int) {
         val product = pList[position]
-        val productImg = ImgList[position]
 
-        holder.tvTitle.text = product
-        holder.bindImage(productImg)
+        holder.tvTitle.text = product.title
+        holder.tvPrice.text = product.price
+        holder.bindImage(product.img)
 
+        val currentItem = AllProducts(
+            img = product.img,
+            title = product.title,
+            price = product.price
+        )
 
         holder.itemView.rootView.setOnClickListener {
-            listener?.ClickedItemFromAllProducts(product[1].toString())
 
             Snackbar.make(
                 holder.itemView.rootView,
-                "  this goes to ShowProductFrag ",
+                "This goes to ShowProductFrag ",
                 Snackbar.LENGTH_SHORT
             ).show()
+//            val value = category
+//            val bundle = Bundle()
+//            bundle.putString("category_key$_Cname", Gson().toJson(value))
+//            Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
+
+            val value = currentItem
+            val bundle = Bundle()
+            bundle.putString("currentItem", Gson().toJson(value))
+            Navigation.findNavController(it).navigate(R.id.action_global_to_showProductFrag,bundle)
         }
     }
 
@@ -53,18 +66,13 @@ class rv_AllItemsAdapter(
         val tvPrice = binding.tvPrice
         val tvImg = binding.watchImg
 
-        fun bindImage(imageUrl: Int) {
+        fun bindImage(imageUrl: String) {
             Glide.with(itemView)
                 .load(imageUrl)
                 .into(tvImg)
         }
     }
 
-    interface ItemsCLickedFromAllProducts {
-        fun ClickedItemFromAllProducts(item: String) {
-        }
-
-    }
 
 }
 
