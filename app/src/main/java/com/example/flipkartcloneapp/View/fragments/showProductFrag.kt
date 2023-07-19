@@ -1,10 +1,12 @@
 package com.example.flipkartcloneapp.View.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.flipkartcloneapp.Model.entities.AllProducts
 import com.example.flipkartcloneapp.Model.entities.ProductList
@@ -32,24 +34,32 @@ class showProductFrag() :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         assignDataToUI()
+
+
+        binding.fbFavouriteBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_global_FavFrag)
+        }
+
     }
+
+    @SuppressLint("ResourceAsColor")
     private fun assignDataToUI() {
 
-        val _data = arguments?.getString("note")
-        if (_data != null) {
-            ProductData = Gson().fromJson(_data, ProductList::class.java)
-            ProductData.let {
-                binding.tvActualPrice.text = it?.pActualPrice
-                binding.tvProductName.text = it?.pName
-                binding.tvCustomerRatingsCount.text = it?.pBankDiscount
-                binding.tvRatingsOnProduct.text = it?.pRatings
-                binding.tvPrice.text = it?.pPrice
-                Glide.with(this)
-                    .load(it?.pImgUrl)
-                    .into(binding.ivProductImage)
-            }
-        } else {
-        }
+//        val _data = arguments?.getString("note")
+//        if (_data != null) {
+//            ProductData = Gson().fromJson(_data, ProductList::class.java)
+//            ProductData.let {
+//                binding.tvActualPrice.text = it?.pActualPrice
+//                binding.tvProductName.text = it?.pName
+//                binding.tvCustomerRatingsCount.text = it?.pBankDiscount
+//                binding.tvRatingsOnProduct.text = it?.pRatings
+//                binding.tvPrice.text = it?.pPrice
+//                Glide.with(this)
+//                    .load(it?.pImgUrl)
+//                    .into(binding.ivProductImage)
+//            }
+//        } else {
+//        }
 
         val _currentItem = arguments?.getString("currentItem")
         if (_currentItem != null) {
@@ -66,13 +76,22 @@ class showProductFrag() :
             currentItem.let {
                 binding.tvPrice.text = it?.price
                 binding.tvActualPrice.text = " "
-                binding.tvDiscountOnProductPrice.text = " "
+                binding.tvDiscountOnProductPrice.text = "25% Discount"
                 binding.tvProductName.text = it?.title
                 Glide.with(this)
                     .load(it?.img)
                     .into(binding.ivProductImage)
             }
+
+            binding.fbFavouriteBtn.setOnClickListener {
+                val value = currentItem
+                val bundle = Bundle()
+                bundle.putString("currentItem", Gson().toJson(value))
+                findNavController().navigate(R.id.action_global_FavFrag)
+            }
+
         } else {
         }
     }
+
 }

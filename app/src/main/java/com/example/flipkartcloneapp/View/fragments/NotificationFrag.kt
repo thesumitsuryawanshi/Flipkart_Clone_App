@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flipkartcloneapp.View.Adapters.rvNotificationsAdapters
+import com.example.flipkartcloneapp.View.Adapters.rvNotificationAdapters
 import com.example.flipkartcloneapp.databinding.FragmentNotificationBinding
 
 
@@ -31,17 +31,27 @@ class NotificationFrag : Fragment() {
     private fun setUpRvNotificaition() {
 
         val NotificaitionList = listOf(
-            "Notification1",
-            "Notification2",
-            "Notification3",
-            "Notification4",
-            "Notification5",
-            "Notification6",
-            "Notification7",
-            "Notification8"
+            "Your ordered has been dispatched \uD83D\uDCE6",
+            "Please verify your order \uD83D\uDCDE",
+            "Here is what you will Love \uD83E\uDD70 ",
+            "Your ordered has been dispatched \uD83D\uDCE6",
+            "Here is what you will Like \uD83D\uDC97 ",
+            "Please verify your Number \uD83D\uDCDE.",
+            "Your ordered has been dispatched \uD83D\uDCE6",
+            "Please verify your E-mail ID."
+        )
+        val timingList = listOf(
+            "9:36 PM",
+            "5:26 PM ",
+            "1:06 PM",
+            "8:36 AM",
+            "10:36 AM",
+            "2:36 PM",
+            "4:20 PM",
+            "5:30 PM",
         )
 
-        val adapter = rvNotificationsAdapters(NotificaitionList, requireContext())
+        val adapter = rvNotificationAdapters(NotificaitionList,timingList,  requireContext())
 
         binding.rvNotification.adapter = adapter
         binding.rvNotification.layoutManager =

@@ -37,7 +37,6 @@ class rv_AllItemsAdapter(val pList: List<AllProducts>) :
         )
 
         holder.itemView.rootView.setOnClickListener {
-
             Snackbar.make(
                 holder.itemView.rootView,
                 "This goes to ShowProductFrag ",

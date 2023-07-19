@@ -134,13 +134,13 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         autoimgSlider.isAutoCycle = true
 
         binding.autoImgSlider.startAutoCycle()
-
     }
 
     override fun ClickedItem(item: ProductList) {
-        val bundle = Bundle()
-        bundle.putString("note", Gson().toJson(item))
-        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
+//        val bundle = Bundle()
+//        bundle.putString("note", Gson().toJson(item))
+//        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
+        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag )
 
     }
 }

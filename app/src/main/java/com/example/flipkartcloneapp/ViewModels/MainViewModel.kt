@@ -49,6 +49,12 @@ constructor(
 val getrvofferList: LiveData<List<AllProducts>>
     get() = repository.getrvofferList
 
+    val getwatchList: LiveData<List<AllProducts>>
+        get() = repository.getwatchList
+
+    val getbrandDealsList: LiveData<List<AllProducts>>
+        get() = repository.getbrandDealsList
+
 //----------------------------------------------------------------
 
     init {
@@ -67,6 +73,8 @@ val getrvofferList: LiveData<List<AllProducts>>
             repository.getCTProducts()
 
             repository.getrvofferList()
+            repository.getwatchList()
+            repository.getbrandDealsList()
 
         }
 

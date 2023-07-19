@@ -214,5 +214,42 @@ public class productDatabase {
         return List
     }
 
-}
+    suspend fun getWatchList(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
 
+        try {
+            val snapshot = db.collection("watchList").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+
+    suspend fun getbrandDealsList(): List<AllProducts> {
+        val List = mutableListOf<AllProducts>()
+
+        try {
+            val snapshot = db.collection("brandDeals").get().await()
+            for (document in snapshot.documents) {
+                val product = document.toObject(AllProducts::class.java)
+                product?.let {
+                    List.add(product)
+                }
+            }
+        } catch (e: Exception) {
+            // Handle any exceptions here
+            e.printStackTrace()
+        }
+        return List
+    }
+
+
+}

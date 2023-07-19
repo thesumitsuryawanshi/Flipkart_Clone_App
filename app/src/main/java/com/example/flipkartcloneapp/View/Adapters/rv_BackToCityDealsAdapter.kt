@@ -35,7 +35,7 @@ class rv_BackToCityDealsAdapter(val btcData: List<backToCityDeals>, val context:
         holder.bindImage(_data.imgUrl)
 
         holder.itemView.setOnClickListener {
-            val value= "btcDeals value"
+            val value= "btcDeals_value"
             val bundle = Bundle()
             bundle.putString("btcDeals_key", Gson().toJson(value))
             Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)

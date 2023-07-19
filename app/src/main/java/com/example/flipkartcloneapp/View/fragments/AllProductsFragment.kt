@@ -109,7 +109,6 @@ class AllProductsFragment : Fragment() {
         arguments?.getString("offers_key")?.apply {
             mainViewModel.getrvofferList.observe(viewLifecycleOwner) { newData ->
 
-                Snackbar.make(binding.root, "Data fetching success.\n \n $newData", Snackbar.LENGTH_SHORT).show()
                 // Handle the updated data here
                 val adapter = rv_AllItemsAdapter(newData)
                 binding.rvAllItemsList.adapter = adapter
@@ -118,16 +117,15 @@ class AllProductsFragment : Fragment() {
             }
         }
         arguments?.getString("btcDeals_key")?.apply {
-            mainViewModel.CEList.observe(viewLifecycleOwner) { newData ->
+            mainViewModel.getwatchList.observe(viewLifecycleOwner) { newData ->
                 // Handle the updated data here
                 val adapter = rv_AllItemsAdapter(newData)
                 binding.rvAllItemsList.adapter = adapter
-                binding.rvAllItemsList.layoutManager =
-                    GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+                binding.rvAllItemsList.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
             }
         }
         arguments?.getString("brandDeals_key")?.apply {
-            mainViewModel.CEList.observe(viewLifecycleOwner) { newData ->
+            mainViewModel.getbrandDealsList.observe(viewLifecycleOwner) { newData ->
                 // Handle the updated data here
                 val adapter = rv_AllItemsAdapter(newData)
                 binding.rvAllItemsList.adapter = adapter

@@ -23,6 +23,8 @@ class repository
     private val _getCTList= MutableLiveData<List<AllProducts>>()
 
     private val _getrvofferList= MutableLiveData<List<AllProducts>>()
+    private val _getwatchList= MutableLiveData<List<AllProducts>>()
+    private val _getbrandDealsList= MutableLiveData<List<AllProducts>>()
 
 
     val ProductListData: LiveData<List<ProductList>>
@@ -60,6 +62,11 @@ class repository
     val getrvofferList: LiveData<List<AllProducts>>
         get() = _getrvofferList
 
+    val getwatchList: LiveData<List<AllProducts>>
+        get() = _getwatchList
+
+   val getbrandDealsList: LiveData<List<AllProducts>>
+        get() = _getbrandDealsList
 
     //----------------------------------------------------------------//----------------------------------------------------------------
 
@@ -121,4 +128,15 @@ class repository
         val _Alldata = dataSource.getrvofferList()
         _getrvofferList.postValue(_Alldata)
     }
+
+    suspend fun getwatchList() {
+        val _Alldata = dataSource.getWatchList()
+        _getwatchList.postValue(_Alldata)
+    }
+
+    suspend fun getbrandDealsList() {
+        val _Alldata = dataSource.getbrandDealsList()
+        _getbrandDealsList.postValue(_Alldata)
+    }
+
 }

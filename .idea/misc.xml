@@ -5,13 +5,18 @@
       <map>
         <entry key="..\:/Users/Magician/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable-v24/bgroundtop.xml" value="0.5435" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.5435" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/frag_view_product.xml" value="0.55" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_all_products.xml" value="0.18" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_cart.xml" value="0.55" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_fav.xml" value="0.55" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_home.xml" value="0.2672239108409321" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_login.xml" value="0.55" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/fragment_sign_up.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/h_rv_categories.xml" value="0.2672239108409321" />
         <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_more_items.xml" value="0.55" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_mycart_items.xml" value="0.55" />
+        <entry key="..\:/Users/Magician/StudioProjects/Flipkart_Clone_App/app/src/main/res/layout/rv_notifications_items.xml" value="0.48114901256732495" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable-v24/bgroundtop.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable/ic_baseline_mail_outline_24.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/sumit/AndroidStudioProjects/FlipkartCloneApp/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.25833333333333336" />

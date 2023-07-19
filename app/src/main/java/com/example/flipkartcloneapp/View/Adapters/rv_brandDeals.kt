@@ -19,17 +19,14 @@ class rv_brandDeals(val BDdata: List<BrandDealsList>, val context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val view =
-            RvBrandDealsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = RvBrandDealsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = ViewHolder(view)
 
         return viewholder
-
     }
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val product = BDdata[position]
         holder.bindImage(product.imgUrl)
 
@@ -39,7 +36,6 @@ class rv_brandDeals(val BDdata: List<BrandDealsList>, val context: Context) :
             bundle.putString("brandDeals_key", Gson().toJson(value ))
             Navigation.findNavController(it).navigate(R.id.GlobalActionTAllProductsFrag, bundle)
         }
-
     }
 
     override fun getItemCount(): Int {
