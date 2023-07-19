@@ -8,29 +8,30 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flipkartcloneapp.R
 import com.example.flipkartcloneapp.View.Adapters.rvCartItemAdapters
-import com.example.flipkartcloneapp.databinding.FragmentCartBinding
-import com.google.android.material.snackbar.Snackbar
+import com.example.flipkartcloneapp.databinding.FragmentFavBinding
 
-class CartFragment : Fragment() {
 
-    lateinit var binding: FragmentCartBinding
+class FavFrag : Fragment() {
+
+    lateinit var binding: FragmentFavBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCartBinding.inflate(inflater, container, false)
+
+        binding = FragmentFavBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        ReceiveDataAndPassToAdapter()
-
+        sendingDataToFavFragAdapter()
     }
 
-    private fun ReceiveDataAndPassToAdapter() {
+    private fun sendingDataToFavFragAdapter() {
 
 
         val icon = listOf(
@@ -44,6 +45,7 @@ class CartFragment : Fragment() {
         )
         val names =
             listOf("Electronics", "Fasion", "Furniture", "Grosery", "Mobiles", "Toys", "Gifts")
+
         val prices = listOf(
             "₹ 2,999/-",
             "₹ 3,999/-",
@@ -54,9 +56,11 @@ class CartFragment : Fragment() {
             "₹ 1,999/-"
         )
 
+
         val adapter = rvCartItemAdapters(icon, names, prices, requireContext())
-        binding.rvCartItems.adapter = adapter
-        binding.rvCartItems.layoutManager =
+        binding.rvFavProductList.adapter = adapter
+        binding.rvFavProductList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
     }
 }

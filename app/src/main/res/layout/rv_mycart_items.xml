@@ -2,7 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cd_cardview"
@@ -12,7 +14,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="8dp"
         app:cardCornerRadius="5dp"
-        app:cardElevation="14dp"
+        app:cardElevation="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/iv_sm_notifications_icons"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
                 android:padding="10dp"
                 android:src="@drawable/ic_baseline_category_24"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -33,13 +35,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_notification_text"
+                android:id="@+id/tv_cart_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name of the Cart item "
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toEndOf="@+id/iv_sm_notifications_icons"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="$3"
-                android:textSize="19sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -60,8 +63,5 @@
                 app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        setTheme(R.style.mysplashcsreentime)
+        setTheme(R.style.Theme_FlipkartCloneApp)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         getSupportActionBar()?.hide()
 
 
-        setTheme(R.style.Theme_FlipkartCloneApp)
+
         setContentView(binding.root)
 
         if (!checkInternetConnection(this)) {

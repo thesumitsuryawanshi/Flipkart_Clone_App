@@ -114,7 +114,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         binding.rvCategories.adapter = adapter
         binding.rvCategories.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
     }
 
     private fun AutoImageSlider() {
@@ -137,10 +136,8 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
     }
 
     override fun ClickedItem(item: ProductList) {
-//        val bundle = Bundle()
-//        bundle.putString("note", Gson().toJson(item))
-//        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
-        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag )
-
+        val bundle = Bundle()
+        bundle.putString("MoreToLoveItem", Gson().toJson(item))
+        findNavController().navigate(R.id.action_homeFrag_to_showProductFrag, bundle)
     }
 }

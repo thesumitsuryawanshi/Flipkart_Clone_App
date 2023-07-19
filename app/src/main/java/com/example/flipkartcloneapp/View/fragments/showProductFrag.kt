@@ -35,35 +35,29 @@ class showProductFrag() :
         super.onViewCreated(view, savedInstanceState)
         assignDataToUI()
 
-
-        binding.fbFavouriteBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_global_FavFrag)
-        }
-
     }
 
     @SuppressLint("ResourceAsColor")
     private fun assignDataToUI() {
 
-//        val _data = arguments?.getString("note")
-//        if (_data != null) {
-//            ProductData = Gson().fromJson(_data, ProductList::class.java)
-//            ProductData.let {
-//                binding.tvActualPrice.text = it?.pActualPrice
-//                binding.tvProductName.text = it?.pName
-//                binding.tvCustomerRatingsCount.text = it?.pBankDiscount
-//                binding.tvRatingsOnProduct.text = it?.pRatings
-//                binding.tvPrice.text = it?.pPrice
-//                Glide.with(this)
-//                    .load(it?.pImgUrl)
-//                    .into(binding.ivProductImage)
-//            }
-//        } else {
-//        }
+        val _data = arguments?.getString("MoreToLoveItem")
+        if (_data != null) {
+            ProductData = Gson().fromJson(_data, ProductList::class.java)
+            ProductData.let {
+                binding.tvActualPrice.text = it?.pActualPrice
+                binding.tvProductName.text = it?.pName
+                binding.tvCustomerRatingsCount.text = it?.pBankDiscount
+                binding.tvRatingsOnProduct.text = it?.pRatings
+                binding.tvPrice.text = it?.pPrice
+                Glide.with(this)
+                    .load(it?.pImgUrl)
+                    .into(binding.ivProductImage)
+            }
+        } else {
+        }
 
         val _currentItem = arguments?.getString("currentItem")
         if (_currentItem != null) {
-
             view?.let {
                 Snackbar.make(
                     it,
@@ -71,7 +65,6 @@ class showProductFrag() :
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
-
             currentItem = Gson().fromJson(_currentItem, AllProducts::class.java)
             currentItem.let {
                 binding.tvPrice.text = it?.price
@@ -82,15 +75,20 @@ class showProductFrag() :
                     .load(it?.img)
                     .into(binding.ivProductImage)
             }
-
-            binding.fbFavouriteBtn.setOnClickListener {
-                val value = currentItem
-                val bundle = Bundle()
-                bundle.putString("currentItem", Gson().toJson(value))
-                findNavController().navigate(R.id.action_global_FavFrag)
-            }
-
         } else {
+        }
+
+        binding.btnAddToCart.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("currentItemFromShowProductFragtoAddToCart", Gson().toJson(_currentItem))
+            findNavController().navigate(R.id.action_global_cartFrag, bundle)
+        }
+        binding.fbFavouriteBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_global_FavFrag)
+        }
+
+        binding.btnIWantThis.setOnClickListener {
+            findNavController().navigate(R.id.action_global_cartFrag)
         }
     }
 

@@ -110,7 +110,7 @@
         />
     <fragment
         android:id="@+id/favFrag"
-        android:name="com.example.flipkartcloneapp.FavFrag"
+        android:name="com.example.flipkartcloneapp.View.fragments.FavFrag"
         android:label="fragment_fav"
         tools:layout="@layout/fragment_fav" />
 

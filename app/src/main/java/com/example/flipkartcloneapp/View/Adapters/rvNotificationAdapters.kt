@@ -28,7 +28,7 @@ class rvNotificationAdapters(val notificationsList: List<String>, val timingList
         holder.tvTiming.text = timing
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, "App working", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "End of the thread.", Toast.LENGTH_SHORT).show()
         }
 
     }

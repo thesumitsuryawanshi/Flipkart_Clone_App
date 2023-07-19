@@ -17,7 +17,6 @@ class rvCategoriesAdapter(
     val context: Context
 ) : RecyclerView.Adapter<rvCategoriesAdapter.CategoryViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val view = HRvCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val viewholder = CategoryViewHolder(view)
