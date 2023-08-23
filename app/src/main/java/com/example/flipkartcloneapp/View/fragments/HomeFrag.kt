@@ -28,7 +28,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         checkGooglelogin()
@@ -57,7 +56,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
             // Handle the updated data here
             val adapter = rv_moreItemsAdapter(newData, this)
             binding.rvMoreItems.adapter = adapter
-
             binding.rvMoreItems.layoutManager =
                 GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         }
@@ -95,7 +93,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
 
             binding.rvOffers.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
         }
     }
 
@@ -112,8 +109,7 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
 
         val adapter = rvCategoriesAdapter(name, imgList, requireContext())
         binding.rvCategories.adapter = adapter
-        binding.rvCategories.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCategories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
     }
 
     private fun AutoImageSlider() {
@@ -131,7 +127,6 @@ class HomeFrag : Fragment(R.layout.fragment_home), rv_moreItemsAdapter.ItemsCLic
         autoimgSlider.setSliderAdapter(sliderAdapter)
         autoimgSlider.scrollTimeInSec = 2
         autoimgSlider.isAutoCycle = true
-
         binding.autoImgSlider.startAutoCycle()
     }
 

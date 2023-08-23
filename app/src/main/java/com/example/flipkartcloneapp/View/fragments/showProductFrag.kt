@@ -86,7 +86,6 @@ class showProductFrag() :
         binding.fbFavouriteBtn.setOnClickListener {
             findNavController().navigate(R.id.action_global_FavFrag)
         }
-
         binding.btnIWantThis.setOnClickListener {
             findNavController().navigate(R.id.action_global_cartFrag)
         }

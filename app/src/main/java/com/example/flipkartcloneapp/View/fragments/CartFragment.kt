@@ -27,11 +27,9 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         ReceiveDataAndPassToAdapter()
-
     }
 
     private fun ReceiveDataAndPassToAdapter() {
-
 
         val icon = listOf(
             R.drawable.c_electronics,
